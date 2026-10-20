@@ -1207,8 +1207,8 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     h += '<ol class="cn-steps">';
     h += '<li><div class="cn-h">Lấy tệp Excel dữ liệu hiện hành</div><div class="small">Dùng tệp của tuần trước, hoặc bấm nút dưới đây để tải bản đúng với dữ liệu đang hiển thị.</div><button class="abtn pri" id="bsave2">' + ic('save', 18) + 'Lưu Excel dữ liệu hiện hành</button></li>';
     h += '<li><div class="cn-h">Sửa các ô tô vàng trong Excel</div><div class="small">Chỉ sửa 4 sheet tab vàng: <b>1_ThongTin</b> (ngày cập nhật), <b>2_NhiemVu</b>, <b>3_KeHoach</b>, <b>4_BanTin</b>. Sheet <b>0_HuongDan</b> có hướng dẫn chi tiết. Lưu tệp (Ctrl+S).</div></li>';
-    h += '<li><div class="cn-h">Chọn tệp Excel đã sửa để kiểm tra</div><label class="abtn file-in">' + ic('cn', 18) + '<span>Chọn tệp Excel (.xlsx)</span><input type="file" id="cnfile" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden></label><div id="cnres">' + (NEW ? cnPreview() : '') + '</div></li>';
-    h += '<li><div class="cn-h">Đưa tệp lên GitHub</div><div class="small">Vào kho GitHub của trang → thư mục <b>data</b> → <b>Add file</b> → <b>Upload files</b> → kéo tệp <b>du-lieu.enc.js</b> vừa tải vào → <b>Commit changes</b>. Sau 1–3 phút, tải lại trang web để xem số liệu mới.</div></li>';
+    h += '<li><div class="cn-h">Chọn tệp Excel đã sửa, rồi bấm "Tải tệp du-lieu.enc.js"</div><div class="small">Sau khi chọn tệp Excel, bảng kết quả kiểm tra hiện ra cùng nút <b>Tải tệp du-lieu.enc.js</b>. Bấm nút này, trình duyệt lưu tệp vào thư mục <b>Tải xuống (Downloads)</b> của máy tính.</div><label class="abtn file-in">' + ic('cn', 18) + '<span>Chọn tệp Excel (.xlsx)</span><input type="file" id="cnfile" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden></label><div id="cnres">' + (NEW ? cnPreview() : '') + '</div></li>';
+    h += '<li><div class="cn-h">Đưa tệp du-lieu.enc.js lên GitHub</div><div class="small">Tệp nằm trong thư mục <b>Tải xuống (Downloads)</b>. Nếu tên tệp có thêm số, ví dụ "du-lieu.enc (1).js", đổi tên lại đúng thành <b>du-lieu.enc.js</b> trước khi tải lên. Vào kho GitHub của trang → thư mục <b>data</b> → <b>Add file</b> → <b>Upload files</b> → kéo tệp <b>du-lieu.enc.js</b> vừa tải vào → <b>Commit changes</b>. Sau 1–3 phút, tải lại trang web để xem số liệu mới.</div></li>';
     h += '</ol>';
     if (!ok) h += '<div class="card small" style="background:var(--warn-l);border-color:#EBD38A">Phiên làm việc này không giữ khóa mã hóa (ví dụ mở bản xem ngoại tuyến). Hãy đăng nhập lại trên trang web, hoặc dùng công cụ <b>cong-cu/cap-nhat-du-lieu.html</b> để mã hóa tệp Excel.</div>';
     h += '<div class="card small muted" style="margin-top:12px">Bảo mật: tệp Excel chứa dữ liệu nội bộ chưa mã hóa – chỉ lưu tại máy hoặc SharePoint của Ban, không tải lên GitHub. Tệp du-lieu.enc.js được mã hóa AES-256 bằng chính tài khoản đang đăng nhập, nên tài khoản và mật khẩu không thay đổi.</div>';
@@ -1228,6 +1228,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     return '<div class="card" style="margin-top:10px"><div class="grp-t">Kết quả kiểm tra tệp ' + esc(r.name) + '</div>' + dl(r.diff) +
       (r.warn.length ? '<div class="cn-warn"><b>' + r.warn.length + ' lưu ý cần xem:</b><ul>' + r.warn.slice(0, 30).map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>' : '<div class="small" style="color:var(--green-d);margin-top:8px"><b>Không phát hiện lỗi định dạng.</b></div>') +
       '<div class="cn-btns"><button class="abtn" id="cnview">Xem thử trên Dashboard</button>' + (ok ? '<button class="abtn pri" id="cnenc">' + ic('save', 18) + 'Tải tệp du-lieu.enc.js</button>' : '') + '</div>' +
+      (r.encDone ? '<div class="small" style="margin-top:8px;color:var(--green-d)"><b>Đã lưu tệp du-lieu.enc.js vào thư mục Tải xuống (Downloads).</b> Chuyển sang bước 4.</div>' : '') +
       (r.applied ? '<div class="small" style="margin-top:6px;color:var(--blue)">Đang xem thử dữ liệu mới (chưa đưa lên web). Tải lại trang để quay về dữ liệu đang công bố.</div>' : '') + '</div>';
   }
   function cnRead(file) {
@@ -1250,7 +1251,8 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       var js = '/* Dữ liệu Dashboard Ban PT&KDSPM – đã mã hóa AES-256-GCM. Cập nhật ' + NEW.data.thongTin.capNhat + '. Không sửa tay tệp này. */\nwindow.DATA_MA_HOA = ' + JSON.stringify(o) + ';\n';
       var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([js], { type: 'text/javascript' })); a.download = 'du-lieu.enc.js';
       document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-      toast('Đã tạo du-lieu.enc.js – tải lên thư mục data trên GitHub.');
+      toast('Đã lưu du-lieu.enc.js vào thư mục Tải xuống (Downloads) – tải lên thư mục data trên GitHub.');
+      NEW.encDone = true; var el = $('#cnres'); if (el) el.innerHTML = cnPreview();
     }).catch(function (e) { toast('Không mã hóa được: ' + e.message); });
   }
 
