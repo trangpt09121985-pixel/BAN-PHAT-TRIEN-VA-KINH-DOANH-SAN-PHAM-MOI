@@ -251,7 +251,7 @@ ol.g{padding-left:20px;margin:6px 0 0}
 
 </script>
 <script>
-/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.1
+/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.2
    Sheet có tab VÀNG: cập nhật hằng tuần; cột tô vàng là cột cần sửa. Sheet tab XÁM: dữ liệu tra cứu, chỉ sửa khi có văn bản/nội dung mới. */
 (function (G) {
   'use strict';
@@ -288,6 +288,11 @@ ol.g{padding-left:20px;margin:6px 0 0}
     { sheet: 'TuDien', path: 'tuDien', cols: [
       ['ma', 'Mã thuật ngữ', 't', 10], ['en', 'Thuật ngữ tiếng Anh', 't', 32], ['vi', 'Thuật ngữ tiếng Việt', 't', 32], ['vt', 'Viết tắt', 't', 10], ['nhom', 'Nhóm chuyên ngành', 't', 30],
       ['dn', 'Định nghĩa / diễn giải', 't', 60], ['vd', 'Ví dụ sử dụng', 't', 30], ['ng', 'Nguồn gốc (Gốc / Bổ sung)', 't', 10, ['Gốc', 'Bổ sung']], ['tt', 'Trạng thái xác minh', 't', 14, ['Cần xác minh', 'Đã xác minh']]] },
+    { sheet: 'TuDien_ChiTiet', path: 'tuDienCT', cols: [
+      ['ma', 'Mã thuật ngữ', 't', 10], ['en', 'Thuật ngữ tiếng Anh', 't', 30], ['giai', 'Giải thích chi tiết (mỗi dòng một đoạn)', 'p', 90], ['hinh', 'Hình minh họa (mã)', 't', 14], ['bai', 'Bài khóa học liên quan', 't', 10]] },
+    { sheet: 'BieuMau', path: 'bieuMau', cols: [
+      ['ma', 'Mã', 't', 8], ['vb', 'Mã văn bản', 't', 8], ['soHieu', 'Số hiệu', 't', 18], ['mau', 'Mẫu số', 't', 11], ['phuLuc', 'Phụ lục', 't', 24], ['ten', 'Tên biểu mẫu', 't', 60], ['tep', 'Tệp PDF (đường dẫn)', 't', 40], ['tepWord', 'Tệp Word (đường dẫn)', 't', 40],
+      ['trang', 'Trang trong văn bản gốc', 'n', 9], ['soTrang', 'Số trang', 'n', 8], ['lv', 'Lĩnh vực (DGNK, SPM, CHUNG)', 'l', 14], ['canCu', 'Căn cứ áp dụng', 't', 40], ['ghiChu', 'Ghi chú', 't', 36]] },
     { sheet: 'QuyHoachDGNK', path: 'quyHoachDGNK.duAn', cols: [
       ['khuVuc', 'Khu vực phát triển ĐGNK', 't', 18], ['khuVucMW', 'Công suất khu vực (MW)', 'n', 11], ['ten', 'Dự án thành phần', 't', 22], ['mw', 'Công suất (MW)', 'n', 10], ['diemGom', 'Điểm gom công suất', 't', 14], ['giaiDoan', 'Giai đoạn vận hành', 't', 12, ['2025-2030', '2031-2035']]] },
     { sheet: 'QuyTrinh_10GD', path: 'quyTrinh.DGNK.buoc', cols: [
@@ -300,7 +305,8 @@ ol.g{padding-left:20px;margin:6px 0 0}
       ['truongHop', 'Trường hợp', 't', 30], ['thuTuc', 'Thủ tục chính', 't', 40], ['noiTrinh', 'Nơi trình', 't', 36], ['canCu', 'Căn cứ', 't', 50]] },
     { sheet: 'DaoTao_ChuyenDe', path: 'daoTao.chuyenDe', cols: [
       ['ma', 'Mã', 't', 8], ['linhVuc', 'Lĩnh vực', 't', 8, ['DGNK', 'SPM']], ['ten', 'Chuyên đề', 't', 36], ['mucTieu', 'Mục tiêu', 't', 60], ['taiLieu', 'Văn bản (mã, phân cách dấu phẩy)', 'l', 26],
-      ['dieuKhoan', 'Chủ đề dẫn chiếu (phân cách bằng dấu chấm phẩy ;)', 's', 30], ['thamKhao', 'Tài liệu tham khảo (mã)', 'l', 16], ['dauRa', 'Đầu ra', 't', 36]] },
+      ['dieuKhoan', 'Chủ đề dẫn chiếu (phân cách bằng dấu chấm phẩy ;)', 's', 30], ['thamKhao', 'Tài liệu tham khảo (mã)', 'l', 16], ['dauRa', 'Đầu ra', 't', 36], ['thoiLuong', 'Thời lượng (phút)', 'n', 10],
+      ['noiDung', 'Nội dung chi tiết (mỗi dòng một đoạn; ## tiêu đề, - gạch đầu dòng, | bảng |, = công thức, ! lưu ý, > ví dụ, ? liên hệ, * điểm chính, @ hình|chú thích)', 'p', 100]] },
     { sheet: 'DaoTao_KhoaHoc', path: 'daoTao.khoaHoc', cols: [
       ['ma', 'Mã', 't', 10], ['linhVuc', 'Lĩnh vực', 't', 8, ['DGNK', 'SPM']], ['ten', 'Tên khóa / hội thảo', 't', 44], ['hinhThuc', 'Hình thức', 't', 28], ['donVi', 'Đơn vị tổ chức', 't', 22],
       ['thoiGian', 'Thời gian', 't', 16], ['doiTuong', 'Đối tượng', 't', 26], ['trangThai', 'Trạng thái', 't', 14, ['Đề xuất', 'Đang thực hiện', 'Hoàn thành', 'Chưa có']], ['nguon', 'Nguồn', 't', 30]] },

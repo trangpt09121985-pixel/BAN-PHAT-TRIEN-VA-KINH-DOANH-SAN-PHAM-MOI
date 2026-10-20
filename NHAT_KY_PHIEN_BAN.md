@@ -1,5 +1,15 @@
 # Nhật ký phiên bản – Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới
 
+## Phiên bản 3.2 – 20/10/2026
+- Từ điển điện gió ngoài khơi: bấm vào thuật ngữ tiếng Anh mở cửa sổ giải thích bằng tiếng Việt; 111 thuật ngữ cốt lõi có giải thích chi tiết, hình minh họa (tĩnh hoặc động), liên kết tới bài học liên quan và các thuật ngữ gần nghĩa. Bộ lọc mới "Có giải thích chi tiết".
+- Khóa học điện gió: thêm Bài 2 "Khung pháp lý và tiêu chuẩn" (khái niệm 06 hải lý theo Luật Điện lực 2024, thứ tự ưu tiên, hai luồng thủ tục, bộ TCVN 10687); hiệu chỉnh và bổ sung các bài theo tài liệu đào tạo EPU 2026 và IRENA 2025 (cấp độ nhám và hệ số α, cường độ rối, mô hình đĩa truyền động Cp/Ct, mô hình vết khí động Jensen, P75, cấp tuabin S/T, yêu cầu tần số theo TT 05/2025/TT-BCT, LCOE theo FCR, BCR, nội suy IRR).
+- Trình bày bài học: ảnh bìa có tuabin quay, thanh tiến độ, mục lục, tiêu đề đánh số, bảng, ô "Điểm chính", 27 hình minh họa SVG (một số có chuyển động; tự tắt khi thiết bị bật chế độ giảm chuyển động).
+- Công cụ tính toán: Weibull phân tích tại một tốc độ chọn trước; Tốc độ gió theo độ cao thêm bảng theo 7 cấp độ nhám; Công suất đầu ra thêm tính mật độ không khí theo độ cao, nhiệt độ và lực đẩy Ct; Kinh tế thêm P50/P75/P90, BCR, thời gian hoàn vốn, trượt giá PPA.
+- Thử thách: 25 câu hỏi (thêm 5).
+- Đào tạo: 12 chuyên đề có nội dung chi tiết (thời lượng, mục tiêu, nội dung theo mục, bảng, ví dụ, liên hệ dự án, liên kết tới văn bản).
+- Văn bản pháp lý: tab mới "Biểu mẫu" gồm 26 mẫu hồ sơ tách thành tệp PDF riêng (TT 79/2025 Mẫu số 01 kèm bản Word; NĐ 243/2026 Phụ lục II; NĐ 272/2026; NĐ 06/2022 Phụ lục II–V). Biểu mẫu hiện trong cửa sổ văn bản, trong nguyên văn điều khoản liên quan và trong tìm kiếm toàn trang.
+- Excel dữ liệu thêm sheet TuDien_ChiTiet, BieuMau; sheet DaoTao_ChuyenDe thêm cột Thời lượng và Nội dung.
+
 ## Phiên bản 3.1 – 20/10/2026
 - Văn bản pháp lý, tab "Nội dung cần đọc": từng nội dung tô vàng được gán đúng lĩnh vực (Điện gió ngoài khơi; Sản phẩm mới – CCS/CCUS, dầu khí, khoáng sản, năng lượng ngoài khơi gắn dầu khí; Dùng chung – đầu tư, đấu thầu). Bộ lọc Điện gió ngoài khơi chỉ hiện 62 nội dung về ĐGNK.
 - Luật Dầu khí 10/2026 và 12/2022 chuyển sang lĩnh vực Sản phẩm mới; NĐ 100/2025 chuyển sang Dùng chung.
