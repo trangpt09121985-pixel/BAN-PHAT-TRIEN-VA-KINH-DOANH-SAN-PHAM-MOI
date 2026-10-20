@@ -8,7 +8,7 @@
 <title>Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới – PVEP</title>
 <!--
   Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới – Tổng Công ty Thăm dò Khai thác Dầu khí (PVEP)
-  Phiên bản 3.0 · Đăng nhập trong trang, dữ liệu mã hóa AES-256-GCM (Web Crypto có sẵn trong trình duyệt).
+  Phiên bản 3.1 · Đăng nhập trong trang, dữ liệu mã hóa AES-256-GCM (Web Crypto có sẵn trong trình duyệt).
   - Không dùng thư viện JavaScript bên ngoài; không tải tài nguyên từ máy chủ ngoài.
   - Font nhúng (SIL Open Font License 1.1, gói npm @fontsource): Be Vietnam Pro, Barlow Condensed.
   - Không dùng localStorage, sessionStorage, cookie.
@@ -400,6 +400,80 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
 .cn-warn{background:var(--risk-l);border:1px solid #F0C2BC;border-radius:8px;padding:8px 12px;font-size:.84rem;margin-top:10px;color:#6B1F17}
 .cn-warn ul{margin:6px 0 0;padding-left:18px}
 .cn-btns{display:flex;flex-wrap:wrap;gap:8px}
+.tt-lv{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px}.tt-lv .tag{font-size:.66rem}
+
+/* ===== v3.1: Khóa học điện gió ===== */
+.kd-no{font:700 .78rem var(--font);color:#fff;background:var(--navy);border-radius:6px;padding:1px 8px}
+.kd-card .t{font-size:1.02rem}
+.kd-feat{border-color:#9DB8D6;background:linear-gradient(120deg,#EEF4FA,#fff 70%)}
+.kd-back{margin:0 0 10px;padding:4px 0}
+.kd-art{padding:18px 18px 16px}
+.kd-art h3{font-size:1.3rem;color:var(--navy-d);margin:8px 0 4px}
+.kd-art .hd{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.kd-body{margin-top:10px;font-size:.98rem;line-height:1.68}
+.kd-body p{margin:0 0 10px}
+.kd-h{font-size:1.06rem;color:var(--navy-d);margin:18px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
+.kd-ul{margin:0 0 10px;padding-left:20px}.kd-ul li{margin-bottom:5px}
+.kd-f{font-family:'Cambria Math','Times New Roman',serif;font-size:1.08rem;background:var(--navy-l);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0 12px;overflow-wrap:anywhere}
+.kd-box{border-radius:10px;padding:10px 12px;margin:10px 0;font-size:.93rem}
+.kd-box>b{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.kd-note{background:var(--warn-l);border:1px solid #EBD38A}.kd-note>b{color:#7A5500}
+.kd-ex{background:var(--green-l);border:1px solid #B9E2C6}.kd-ex>b{color:var(--green-d)}
+.kd-pv{background:#EEF0FA;border:1px solid #C8CDEB}.kd-pv>b{color:var(--blue)}
+.kd-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.kd-src{margin-top:16px;font-size:.84rem;color:var(--ink2);border-top:1px solid var(--line);padding-top:10px}
+.kd-src ol{margin:6px 0 0;padding-left:20px}.kd-src li{margin-bottom:4px;overflow-wrap:anywhere}
+.kd-nav{display:flex;justify-content:space-between;gap:8px;margin-top:12px;flex-wrap:wrap}
+.kd-nav .abtn{max-width:100%;white-space:normal;text-align:left}
+.kd-toolseg button{white-space:normal;line-height:1.2}
+.kd-tool{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+#kdout,.kd-inp{min-width:0}
+.kd-in.full{grid-column:1/-1}
+@media (min-width:1080px){.kd-tool{grid-template-columns:minmax(0,400px) minmax(0,1fr);align-items:start}.kd-inp{position:sticky;top:12px}}
+.kd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;margin-top:10px}
+.kd-in{display:flex;flex-direction:column;gap:3px;font-size:.8rem;font-weight:600;color:var(--ink2);min-width:0}
+.kd-in i{font-style:normal;font-weight:400;color:var(--mute)}
+.kd-in input{height:42px;border:1.5px solid var(--line);border-radius:9px;padding:0 10px;font-size:.98rem;width:100%;min-width:0;background:#fff}
+.kd-in input[readonly]{background:var(--bg2);color:var(--mute)}
+.kd-in .sel{height:42px}
+.kd-sub{font-weight:700;color:var(--navy-d);font-size:.86rem;margin-top:14px}
+.kd-range{width:100%;margin:14px 0 6px;accent-color:var(--navy)}
+.kd-presets{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.chip2{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px;font-size:.78rem;color:var(--navy)}
+.kd-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (min-width:760px){.kd-res{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.kd-res>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;min-width:0;display:flex;flex-direction:column}
+.kd-res>div.hi{border-color:#9DB8D6;background:var(--navy-l)}
+.kd-res span{font-size:.74rem;color:var(--mute);line-height:1.3}
+.kd-res b{font-size:1.45rem;color:var(--navy-d);line-height:1.2;overflow-wrap:anywhere}
+.kd-res small{font-size:.72rem;color:var(--ink2)}
+.kd-ch,.kd-tbl{margin-top:10px}
+.kd-chart{width:100%;max-width:680px;height:auto;display:block;margin:6px auto 0}
+.kd-chart text{font:14px var(--font);fill:#5B6B80}.kd-chart .ax{font-weight:600;fill:var(--ink2)}
+.kd-chart .g{stroke:#E6EBF2}.kd-chart .a{stroke:#9AA8B8}
+.kd-chart .b{fill:#C9D5E3}.kd-chart .b.on{fill:#5B8DC0}
+.kd-chart .bn{fill:#E2574C}.kd-chart .bp{fill:#2CB04A}
+.kd-chart .l{stroke-width:2.5;stroke-linejoin:round}.kd-chart .l1{stroke:var(--navy-d)}.kd-chart .l2{stroke:#E08A00}
+.kd-chart .ref{stroke:#C0392B;stroke-dasharray:5 4}.kd-chart .reft{fill:#C0392B;font-size:13px}
+.kd-chart .pt{fill:var(--green);stroke:#fff;stroke-width:2}.kd-chart .ptt{font-weight:700;fill:var(--green-d);font-size:15px}
+.kd-leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.76rem;color:var(--ink2);margin-top:4px}
+.kd-leg i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.kd-leg .lb{background:#C9D5E3}.kd-leg .lb.on{background:#5B8DC0}.kd-leg .ll{height:3px}.kd-leg .ll.l1{background:var(--navy-d)}.kd-leg .ll.l2{background:#E08A00}.kd-leg .ll.ref{background:#C0392B}
+.kd-tbl summary{cursor:pointer;font-weight:700;color:var(--navy-d)}
+.kd-tbl .tbl{margin-top:8px;width:100%}
+.kd-tbl tr.on td{background:var(--navy-l);font-weight:700}
+.kd-verdict{margin-top:10px;border-radius:10px;padding:10px 12px;font-weight:600;font-size:.9rem}
+.kd-verdict.ok{background:var(--ok-l);color:var(--green-d)}.kd-verdict.no{background:var(--risk-l);color:#8A2A20}
+.kd-q .t{font-size:1.05rem;margin:8px 0 10px}
+.kd-q .hd{display:flex;gap:6px;flex-wrap:wrap}
+.kd-opts{display:grid;gap:8px}
+.kd-opt{text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;font-size:.94rem}
+.kd-opt:hover:not([disabled]){border-color:var(--navy)}
+.kd-opt.ok{border-color:var(--green);background:var(--ok-l)}.kd-opt.no{border-color:var(--risk);background:var(--risk-l)}
+.kd-score{text-align:center}.kd-score .v{font-size:3rem;color:var(--navy-d)}
+.kd-res b{font-size:1.3rem}
+.tbl.kd-t{min-width:0;width:100%}
+.kd-t td:first-child{white-space:nowrap}
 
 </style>
 </head>
@@ -424,7 +498,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
         <div class="lg-err" id="err" role="alert" hidden></div>
         <div class="lg-note">🔒 <span>Dữ liệu được mã hóa AES-256; chỉ giải mã trên máy người xem khi nhập đúng tài khoản. Liên hệ quản trị viên của Ban để được cấp tài khoản.</span></div>
       </form>
-      <div class="lg-foot">© Ban Phát triển và Kinh doanh Sản phẩm mới – PVEP · Phiên bản 3.0</div>
+      <div class="lg-foot">© Ban Phát triển và Kinh doanh Sản phẩm mới – PVEP · Phiên bản 3.1</div>
     </div>
   </div>
 </section>
@@ -600,7 +674,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
 
 </script>
 <script>
-/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.0
+/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.1
    Sheet có tab VÀNG: cập nhật hằng tuần; cột tô vàng là cột cần sửa. Sheet tab XÁM: dữ liệu tra cứu, chỉ sửa khi có văn bản/nội dung mới. */
 (function (G) {
   'use strict';
@@ -627,7 +701,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       ['xacMinh', 'Trạng thái xác minh', 't', 18], ['lienKet', 'Liên kết chính thức', 't', 28], ['tep', 'Tệp PDF đánh dấu vàng (đường dẫn)', 't', 34], ['tepGoc', 'Tệp Word gốc (đường dẫn)', 't', 30], ['soTrang', 'Số trang', 'n', 8],
       ['noiBo', 'Văn bản nội bộ?', 'b', 9, ['Có', 'Không']], ['tuKhoa', 'Từ khóa', 't', 22], ['ghiChu', 'Ghi chú', 't', 40]] },
     { sheet: 'TrongTam', special: 'trongTam', cols: [
-      ['vb', 'Mã văn bản', 't', 8], ['id', 'Mã nội dung', 't', 11], ['label', 'Nội dung cần tập trung đọc (nhãn)', 't', 40], ['tieuDe', 'Điều / đoạn', 't', 50], ['trang', 'Trang trong PDF (phẩy)', 'l', 14], ['nv', 'Mã nguyên văn', 't', 14]] },
+      ['vb', 'Mã văn bản', 't', 8], ['id', 'Mã nội dung', 't', 11], ['label', 'Nội dung cần tập trung đọc (nhãn)', 't', 40], ['tieuDe', 'Điều / đoạn', 't', 50], ['trang', 'Trang trong PDF (phẩy)', 'l', 14], ['nv', 'Mã nguyên văn', 't', 14], ['lv', 'Lĩnh vực cần đọc (DGNK, SPM, CHUNG – phẩy)', 'l', 16]] },
     { sheet: 'DieuKhoan', path: 'dieuKhoan', cols: [
       ['ma', 'Mã', 't', 7], ['linhVuc', 'Lĩnh vực (DGNK/SPM/CHUNG)', 't', 9, ['DGNK', 'SPM', 'CHUNG']], ['chuDe', 'Chủ đề', 't', 22], ['vb', 'Mã văn bản', 't', 8], ['soHieu', 'Số hiệu', 't', 16],
       ['dieuKhoan', 'Điều, khoản', 't', 22], ['noiDung', 'Nội dung quy định (tóm tắt)', 't', 56], ['yNghia', 'Ý nghĩa với PVEP', 't', 42], ['xacMinh', 'Xác minh', 't', 16], ['nguyenVan', 'Mã nguyên văn', 't', 14]] },
@@ -664,10 +738,23 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       ['ma', 'Mã', 't', 8], ['ten', 'Khu vực', 't', 28], ['phong', 'Phòng', 't', 8], ['moTa', 'Mô tả', 't', 60], ['vaiTro', 'Vai trò PVEP', 't', 44], ['uuTien', 'Thứ tự ưu tiên', 'n', 9]] },
     { sheet: 'KinhPhi2027', path: 'chiTieu.kinhPhi2027', cols: [
       ['linhVuc', 'Lĩnh vực', 't', 24], ['phong', 'Phòng', 't', 8], ['giaTri', 'Giá trị', 'n', 10], ['donVi', 'Đơn vị', 't', 12], ['ghiChu', 'Ghi chú', 't', 30]] },
+    { sheet: 'KhoaHoc_Bai', path: 'khoaHocDG.bai', cols: [
+      ['ma', 'Mã bài', 't', 8], ['chuong', 'Chương', 't', 12], ['ten', 'Tên bài', 't', 34], ['moTa', 'Mô tả ngắn', 't', 44], ['phut', 'Thời lượng (phút)', 'n', 9],
+      ['capDo', 'Cấp độ', 't', 10, ['Cơ bản', 'Trung cấp', 'Nâng cao']], ['congCu', 'Công cụ liên quan (weibull, docao, congsuat, kinhte)', 't', 20], ['nguon', 'Nguồn (mã, chấm phẩy)', 't', 18],
+      ['noiDung', 'Nội dung (mỗi dòng một đoạn; ## tiêu đề, - gạch đầu dòng, = công thức, ! lưu ý, > ví dụ, ? liên hệ dự án)', 'p', 100]] },
+    { sheet: 'KhoaHoc_CauHoi', path: 'khoaHocDG.cauHoi', cols: [
+      ['bai', 'Mã bài', 't', 8], ['hoi', 'Câu hỏi', 't', 60], ['a', 'Phương án a', 't', 26], ['b', 'Phương án b', 't', 26], ['c', 'Phương án c', 't', 26], ['d', 'Phương án d', 't', 26],
+      ['dap', 'Đáp án (a/b/c/d)', 't', 8, ['a', 'b', 'c', 'd']], ['giai', 'Giải thích', 't', 50]] },
+    { sheet: 'KhoaHoc_Nguon', path: 'khoaHocDG.nguon', cols: [
+      ['ma', 'Mã nguồn', 't', 8], ['ten', 'Tên tài liệu', 't', 80], ['lienKet', 'Liên kết', 't', 60]] },
+    { sheet: 'TuabinThamChieu', path: 'khoaHocDG.tuabin', cols: [
+      ['ma', 'Mã', 't', 8], ['ten', 'Tên tuabin', 't', 34], ['p', 'Công suất (MW)', 'n', 10], ['d', 'Đường kính rôto (m)', 'n', 10], ['hub', 'Độ cao trục (m)', 'n', 10],
+      ['vin', 'Cut-in (m/s)', 'n', 9], ['vr', 'Định mức (m/s)', 'n', 9], ['vout', 'Cut-out (m/s)', 'n', 9], ['rpm', 'Tốc độ quay tối đa (vòng/phút)', 'n', 10], ['cp', 'Cp thiết kế', 'n', 9], ['tsr', 'TSR tối ưu', 'n', 9], ['eta', 'Hiệu suất điện – cơ (0–1)', 'n', 9], ['nguon', 'Nguồn', 't', 8]] },
   ];
   var CFG = ['phong', 'phuongThuc', 'chiTieu.quyHoachDGNK', 'quyTrinh.DGNK.ten', 'quyTrinh.DGNK.trangThai', 'quyTrinh.DGNK.nguon', 'quyTrinh.DGNK.gd1.ten',
     'quyTrinh.DGNK.gd1.trangThai', 'quyTrinh.DGNK.gd1.luuY', 'quyTrinh.DGNK.sangLoc', 'quyTrinh.SPM', 'banTinNhom', 'tuDienNhom',
-    'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu'];
+    'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu',
+    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh'];
   var INFO = [['capNhat', 'Ngày cập nhật dữ liệu (mốc tính quá hạn) – SỬA MỖI TUẦN', 'd', 1], ['nguoiCapNhat', 'Người cập nhật', 't', 1], ['tanSuat', 'Tần suất cập nhật', 't'],
     ['nguongSapHan', 'Ngưỡng "sắp đến hạn" (ngày)', 'n'], ['phienBan', 'Phiên bản', 't'], ['tenBan', 'Tên Ban', 't'], ['tenTCT', 'Tên Tổng Công ty', 't'], ['slogan', 'Khẩu hiệu', 't'],
     ['laDuLieuMau', 'Là dữ liệu mẫu?', 'b'], ['ghiChu', 'Ghi chú chung (hiện ở trang Tổng quan)', 't', 1]];
@@ -777,7 +864,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
 
 </script>
 <script>
-/* ===================== DASHBOARD BAN PT&KD SPM – GIAO DIỆN v3.0 (không chứa dữ liệu) ===================== */
+/* ===================== DASHBOARD BAN PT&KD SPM – GIAO DIỆN v3.1 (không chứa dữ liệu) ===================== */
 (function () {
   'use strict';
   var D = null, M = '<CẦN_BỔ_SUNG>';
@@ -840,11 +927,12 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     td: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20v3H6.5"/><path d="M9 7h7M9 11h5"/>',
     bt: '<path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><path d="M7 8h7M7 12h7M7 16h4"/>',
     cn: '<path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>',
+    kd: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/><path d="M7 8h2M15 8h2M15 11h2"/>',
     hl: '<path d="M9 11l-5 5v4h4l5-5"/><path d="M13 7l4 4M14.5 5.5l2-2 4 4-2 2z"/><path d="M14 21h7"/>'
   };
   function ic(k, s) { return '<svg viewBox="0 0 24 24" ' + (s ? 'width="' + s + '" height="' + s + '" ' : '') + 'fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + IC[k] + '</svg>'; }
   var PAGES = [['g', 'Điều hành'], ['tq', 'Tổng quan'], ['nv', 'Nhiệm vụ chỉ đạo'], ['kh', 'Kế hoạch trọng tâm'], ['da', 'Dự án, khu vực ưu tiên'],
-    ['g', 'Tra cứu'], ['vb', 'Văn bản pháp lý'], ['qt', 'Quy trình'], ['g', 'Phát triển năng lực'], ['dt', 'Đào tạo'], ['td', 'Từ điển điện gió ngoài khơi'], ['bt', 'Bản tin thị trường tuần'],
+    ['g', 'Tra cứu'], ['vb', 'Văn bản pháp lý'], ['qt', 'Quy trình'], ['g', 'Phát triển năng lực'], ['dt', 'Đào tạo'], ['kd', 'Khóa học điện gió'], ['td', 'Từ điển điện gió ngoài khơi'], ['bt', 'Bản tin thị trường tuần'],
     ['g', 'Quản trị dữ liệu'], ['cn', 'Cập nhật dữ liệu']];
   var SHORT = { tq: 'Tổng quan', nv: 'Nhiệm vụ', kh: 'Kế hoạch', vb: 'Văn bản' };
 
@@ -965,13 +1053,14 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
   /* nội dung cần tập trung đọc (đánh dấu vàng) */
   function pdfAt(d, p) { return d.tep && !d.noiBo ? esc(d.tep) + (p ? '#page=' + p : '') : ''; }
   function vbTT() {
-    return '<div class="hl-note">' + ic('hl', 18) + '<span>Các điều, khoản dưới đây được <b class="hlw">tô vàng</b> trong bản PDF của văn bản. Bấm vào từng mục để đọc nguyên văn (đoạn cần đọc được tô vàng) hoặc mở PDF đúng trang.</span></div>' +
+    return '<div class="hl-note">' + ic('hl', 18) + '<span>Các điều, khoản dưới đây được <b class="hlw">tô vàng</b> trong bản PDF của văn bản và được phân theo đúng lĩnh vực cần đọc: chọn <b>Điện gió ngoài khơi</b>, <b>Sản phẩm mới</b> (CCS/CCUS, dầu khí, khoáng sản) hoặc <b>Dùng chung</b> (đầu tư, đấu thầu). Bấm vào từng mục để đọc nguyên văn hoặc mở PDF đúng trang.</span></div>' +
       '<div class="fbar" style="grid-template-columns:1fr"><label class="sbox">' + ic('search', 18) + '<input id="q" type="search" placeholder="Tìm: ưu đãi, khảo sát, CCS, chủ trương, nhà đầu tư…" value="' + esc(S.q) + '" aria-label="Tìm nội dung cần đọc"></label></div><div id="res">' + ttRes() + '</div>';
   }
+  function ttLv(t, d) { return t.lv && t.lv.length ? t.lv : (d.linhVuc || []); }
   function ttRes() {
     var lv = curLv(), q = norm(S.q), n = 0;
-    var L = D.phapLy.filter(function (d) { return (d.trongTam || []).length && (!lv || (d.linhVuc || []).indexOf(lv) >= 0); }).map(function (d) {
-      var its = d.trongTam.filter(function (t) { return !t.loi && (!q || norm([d.soHieu, d.ten, t.label, t.tieuDe].join(' ')).indexOf(q) >= 0); });
+    var L = D.phapLy.filter(function (d) { return (d.trongTam || []).length; }).map(function (d) {
+      var its = d.trongTam.filter(function (t) { return !t.loi && (!lv || ttLv(t, d).indexOf(lv) >= 0) && (!q || norm([d.soHieu, d.ten, t.label, t.tieuDe].join(' ')).indexOf(q) >= 0); });
       n += its.length; return { d: d, its: its };
     }).filter(function (x) { return x.its.length; });
     L.sort(function (a, b) { return (pd(b.d.ngayBanHanh) || 0) - (pd(a.d.ngayBanHanh) || 0); });
@@ -981,7 +1070,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       var d = x.d;
       return '<div class="item tt-doc" style="--c:var(--hl-d)"><div class="hd"><button class="linkish doc" data-vbm="' + esc(d.ma) + '"><span class="sh">' + esc(d.soHieu) + '</span></button><span class="pill ' + ttCls(d.tinhTrang) + '">' + esc(d.tinhTrang || '') + '</span></div>' +
         '<div class="small" style="margin:4px 0 8px;color:var(--ink2)">' + esc(d.ten) + '</div><ol class="tt-list">' + x.its.map(function (t) {
-          return '<li><button class="tt-it" ' + (t.nv && D.nguyenVan[t.nv] ? 'data-nvk="' + esc(t.nv) + '"' : 'data-vbm="' + esc(d.ma) + '"') + '><span class="hlw">' + esc(t.label) + '</span><span class="small muted">' + esc(t.tieuDe || '') + '</span></button>' +
+          return '<li><button class="tt-it" ' + (t.nv && D.nguyenVan[t.nv] ? 'data-nvk="' + esc(t.nv) + '"' : 'data-vbm="' + esc(d.ma) + '"') + '><span class="hlw">' + esc(t.label) + '</span><span class="small muted">' + esc(t.tieuDe || '') + '</span>' + (lv ? '' : '<span class="tt-lv">' + lvTags(ttLv(t, d)) + '</span>') + '</button>' +
             (pdfAt(d) && (t.trang || []).length ? '<a class="pg" href="' + pdfAt(d, t.trang[0]) + '" target="_blank" rel="noopener" title="Mở PDF tại trang ' + t.trang[0] + '">tr. ' + t.trang[0] + '</a>' : '') + '</li>';
         }).join('') + '</ol>' + (pdfAt(d) ? '<a class="abtn hlb" href="' + pdfAt(d) + '" target="_blank" rel="noopener">' + ic('file', 18) + 'Mở bản PDF đã đánh dấu vàng</a>' : '') + '</div>';
     }).join('') + '</div>';
@@ -1083,7 +1172,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     h += '<div class="seg wide" role="group"><button data-dtt="DGNK" aria-pressed="' + (tab === 'DGNK') + '">Điện gió ngoài khơi</button><button data-dtt="SPM" aria-pressed="' + (tab === 'SPM') + '">Sản phẩm mới (CCS/CCUS, khoáng sản)</button></div>';
     var CD = (T.chuyenDe || []).filter(function (c) { return c.linhVuc === tab; });
     h += '<div class="sec">Chuyên đề học tập <span class="tag">' + CD.length + '</span></div><div class="grid2">' + CD.map(function (c, i) {
-      return '<button class="item" style="--c:' + (tab === 'SPM' ? 'var(--green)' : 'var(--navy)') + '" data-cd="' + esc(c.ma) + '"><div class="hd"><span class="tag ' + (tab === 'SPM' ? 'g' : 'b') + '">Chuyên đề ' + (i + 1) + '</span></div><div class="t">' + esc(c.ten) + '</div><div class="small" style="margin-top:6px;color:var(--ink2)">' + esc(c.mucTieu) + '</div><div class="m"><span>' + (c.taiLieu || []).length + ' văn bản</span>' + ((c.thamKhao || []).length ? '<span>' + c.thamKhao.length + ' tài liệu tham khảo</span>' : '') + '<span>Đầu ra: ' + esc(c.dauRa || '') + '</span></div></button>'; }).join('') + '</div>';
+      return '<button class="item' + (c.ma === 'CD-KHDG' ? ' kd-feat' : '') + '" style="--c:' + (tab === 'SPM' ? 'var(--green)' : 'var(--navy)') + '" ' + (c.ma === 'CD-KHDG' ? 'data-kdt="bai"' : 'data-cd="' + esc(c.ma) + '"') + '><div class="hd"><span class="tag ' + (tab === 'SPM' ? 'g' : 'b') + '">Chuyên đề ' + (i + 1) + '</span></div><div class="t">' + esc(c.ten) + '</div><div class="small" style="margin-top:6px;color:var(--ink2)">' + esc(c.mucTieu) + '</div><div class="m"><span>' + (c.taiLieu || []).length + ' văn bản</span>' + ((c.thamKhao || []).length ? '<span>' + c.thamKhao.length + ' tài liệu tham khảo</span>' : '') + '<span>Đầu ra: ' + esc(c.dauRa || '') + '</span></div></button>'; }).join('') + '</div>';
     var KH = (T.khoaHoc || []).filter(function (c) { return c.linhVuc === tab; });
     h += '<div class="sec">Khóa đào tạo, hội thảo</div>' + (KH.length ? '<div class="grid2">' + KH.map(function (k) {
       var cls = k.trangThai === 'Hoàn thành' ? 's-done' : k.trangThai === 'Đang thực hiện' ? 's-doing' : k.trangThai === 'Đề xuất' ? 's-soon' : 's-idle';
@@ -1235,7 +1324,9 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     var el = $('#cnres'); el.innerHTML = '<div class="small muted" style="margin-top:8px">Đang đọc tệp…</div>';
     file.arrayBuffer().then(XLSXMini.read).then(function (book) {
       var r = DashSchema.fromSheets(book), nd = r.data;
-      ['phong', 'khuVuc', 'phuongThuc', 'chiTieu', 'quyTrinh', 'daoTao', 'tuDienNhom', 'banTinNhom'].forEach(function (k) { if (nd[k] == null || (Array.isArray(nd[k]) && !nd[k].length && ((D0 || D)[k] || []).length)) { nd[k] = (D0 || D)[k]; r.warn.push('Không đọc được "' + k + '" từ Excel – giữ nguyên dữ liệu hiện hành.'); } });
+      ['phong', 'khuVuc', 'phuongThuc', 'chiTieu', 'quyTrinh', 'daoTao', 'tuDienNhom', 'banTinNhom', 'khoaHocDG'].forEach(function (k) { if (nd[k] == null || (Array.isArray(nd[k]) && !nd[k].length && ((D0 || D)[k] || []).length)) { nd[k] = (D0 || D)[k]; r.warn.push('Không đọc được "' + k + '" từ Excel – giữ nguyên dữ liệu hiện hành.'); } });
+      var lvOld = {}; ((D0 || D).phapLy || []).forEach(function (d) { (d.trongTam || []).forEach(function (t) { if (t.lv) lvOld[t.id] = t.lv; }); });
+      (nd.phapLy || []).forEach(function (d) { (d.trongTam || []).forEach(function (t) { if ((!t.lv || !t.lv.length) && lvOld[t.id]) t.lv = lvOld[t.id]; }); });
       if (!(nd.nhiemVu || []).length && (D.nhiemVu || []).length) r.warn.unshift('CẢNH BÁO: tệp không có nhiệm vụ nào – kiểm tra lại sheet 2_NhiemVu.');
       NEW = { name: file.name, data: nd, warn: r.warn, diff: cnDiff(D0 || D, nd) };
       el.innerHTML = cnPreview();
@@ -1254,6 +1345,289 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       toast('Đã lưu du-lieu.enc.js vào thư mục Tải xuống (Downloads) – tải lên thư mục data trên GitHub.');
       NEW.encDone = true; var el = $('#cnres'); if (el) el.innerHTML = cnPreview();
     }).catch(function (e) { toast('Không mã hóa được: ' + e.message); });
+  }
+
+  /* ================= TRANG: KHÓA HỌC ĐIỆN GIÓ ================= */
+  var KD = { tab: 'bai', bai: '', tool: 'weibull', qi: 0, qa: {}, v: null };
+  var TOOLS = [['weibull', 'Phân phối Weibull'], ['docao', 'Tốc độ gió theo độ cao'], ['congsuat', 'Công suất đầu ra'], ['kinhte', 'Tài nguyên gió và hiệu quả kinh tế']];
+  function KH() { return D.khoaHocDG || { bai: [], cauHoi: [], nguon: [], tuabin: [], macDinh: {} }; }
+  function vn(x, d) { if (!isFinite(x)) return '—'; return (+x).toLocaleString('vi-VN', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function gam(z) { // Lanczos
+    if (z < 0.5) return Math.PI / (Math.sin(Math.PI * z) * gam(1 - z));
+    var g = 7, p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    z -= 1; var x = p[0]; for (var i = 1; i < g + 2; i++) x += p[i] / (z + i); var t = z + g + 0.5;
+    return Math.sqrt(2 * Math.PI) * Math.pow(t, z + 0.5) * Math.exp(-t) * x;
+  }
+  function wpdf(v, c, k) { return v <= 0 ? 0 : (k / c) * Math.pow(v / c, k - 1) * Math.exp(-Math.pow(v / c, k)); }
+  function wcdf(v, c, k) { return v <= 0 ? 0 : 1 - Math.exp(-Math.pow(v / c, k)); }
+  function kdVals() {
+    if (KD.v) return KD.v;
+    var M = KH().macDinh || {}, T = KH().tuabin || [], t = T.filter(function (x) { return x.ma === 'IEA15'; })[0] || T[0] || {};
+    var g = (M.giaDien || [])[1] || (M.giaDien || [])[0] || { gia: 0 };
+    KD.v = {
+      weibull: { mode: 'vk', v: 8.0, c: 9.0, k: 2.0, rho: 1.225, vin: 3, vout: 25 },
+      docao: { m: 'log', v1: 8.0, h1: 100, h2: 150, z0: 0.0002, a: 0.14 },
+      congsuat: tbVals({ tb: t.ma || 'TUY', rho: 1.225, v: 8 }, t),
+      kinhte: { v: M.v || 8.5, k: M.k || 2, rho: M.rho || 1.2, tb: t.ma || '', n: M.n || 33, lw: M.lw, la: M.la, le: M.le, lo: M.lo, sig: M.sig, capex: M.capex, opex: M.opex, life: M.life, r: M.r, vung: g.vung || '', gia: g.gia, fx: M.fx }
+    };
+    return KD.v;
+  }
+  function tbVals(o, t) { t = t || {}; ['p', 'd', 'hub', 'vin', 'vr', 'vout', 'rpm', 'cp', 'tsr', 'eta'].forEach(function (k) { if (t[k] != null) o[k] = +t[k]; }); return o; }
+  function tbBy(ma) { return (KH().tuabin || []).filter(function (x) { return x.ma === ma; })[0]; }
+  // đường cong công suất mô phỏng: P = min(Pđm, ½ρA·Cp·η·v³) trong khoảng cut-in – cut-out (MW)
+  function pcurve(t, rho, v) { if (v < t.vin || v > t.vout) return 0; var A = Math.PI * t.d * t.d / 4; return Math.min(t.p, 0.5 * rho * A * t.cp * (t.eta || 1) * Math.pow(v, 3) / 1e6); }
+
+  function pgKD() {
+    var K = KH(), B = K.bai || [];
+    var h = '<div class="vhead"><div><h2>' + esc(K.ten || 'Khóa học điện gió') + '</h2><p>' + esc(K.moTa || '') + '</p></div></div>';
+    h += '<div class="seg" role="group"><button data-kdt="bai" aria-pressed="' + (KD.tab === 'bai') + '">Bài học (' + B.length + ')</button><button data-kdt="cc" aria-pressed="' + (KD.tab === 'cc') + '">Công cụ tính toán</button><button data-kdt="tt" aria-pressed="' + (KD.tab === 'tt') + '">Thử thách</button></div>';
+    if (KD.tab === 'cc') return h + kdTools();
+    if (KD.tab === 'tt') return h + '<div id="kdq">' + kdQuiz() + '</div>';
+    var b = B.filter(function (x) { return x.ma === KD.bai; })[0];
+    if (b) return h + kdLesson(b, B);
+    var ch = []; B.forEach(function (x) { if (ch.indexOf(x.chuong) < 0) ch.push(x.chuong); });
+    var tong = B.reduce(function (s, x) { return s + (+x.phut || 0); }, 0);
+    h += '<div class="count">' + B.length + ' bài · khoảng ' + vn(tong / 60, 1) + ' giờ đọc · ' + (K.cauHoi || []).length + ' câu hỏi thử thách · đối tượng: ' + esc(K.doiTuong || '') + '</div>';
+    ch.forEach(function (c) {
+      h += '<div class="sec">' + esc(c) + '</div><div class="grid2">' + B.filter(function (x) { return x.chuong === c; }).map(function (x) {
+        var no = B.indexOf(x);
+        return '<button class="item kd-card" style="--c:' + (x.capDo === 'Nâng cao' ? 'var(--blue)' : x.capDo === 'Trung cấp' ? 'var(--navy)' : 'var(--green)') + '" data-kdb="' + esc(x.ma) + '"><div class="hd"><span class="kd-no">' + (no === 0 ? 'Bắt đầu' : 'Bài ' + no) + '</span><span class="tag">' + esc(x.capDo || '') + '</span><span class="tag">' + esc(x.phut || '') + ' phút</span></div><div class="t">' + esc(x.ten) + '</div><div class="small" style="margin-top:4px;color:var(--ink2)">' + esc(x.moTa || '') + '</div>' +
+          (x.congCu ? '<div class="m">' + x.congCu.split(',').map(function (k) { var t = TOOLS.filter(function (y) { return y[0] === k.trim(); })[0]; return t ? '<span>⚙ ' + esc(t[1]) + '</span>' : ''; }).join('') + '</div>' : '') + '</button>';
+      }).join('') + '</div>';
+    });
+    h += '<div class="card small muted" style="margin-top:14px">Nội dung biên soạn lại bằng tiếng Việt từ nhiều nguồn (GWEC, IRENA, IEA Wind, NREL, DTU, giáo trình chuyên ngành, văn bản pháp lý trong kho); cấu trúc tham khảo windpower.space. Số liệu thị trường cập nhật đến 10/2026.</div>';
+    return h;
+  }
+  function kdInline(t) {
+    return esc(t).replace(/\[\[(VB\d+)\|([^\]]+)\]\]/g, '<button class="linkish" data-vbm="$1">$2</button>')
+      .replace(/\{\{(weibull|docao|congsuat|kinhte)\|([^}]+)\}\}/g, '<button class="linkish" data-kdtool="$1">$2</button>');
+  }
+  function kdRender(lines) {
+    var h = '', ul = false;
+    (lines || []).forEach(function (l) {
+      var m = l.slice(0, 2), r = l.slice(2);
+      if (m !== '- ' && ul) { h += '</ul>'; ul = false; }
+      if (l.indexOf('## ') === 0) h += '<h4 class="kd-h">' + kdInline(l.slice(3)) + '</h4>';
+      else if (m === '- ') { if (!ul) { h += '<ul class="kd-ul">'; ul = true; } h += '<li>' + kdInline(r) + '</li>'; }
+      else if (m === '= ') h += '<div class="kd-f">' + kdInline(r) + '</div>';
+      else if (m === '! ') h += '<div class="kd-box kd-note"><b>Lưu ý</b>' + kdInline(r) + '</div>';
+      else if (m === '> ') h += '<div class="kd-box kd-ex"><b>Ví dụ</b>' + kdInline(r.replace(/^Ví dụ:\s*/, '')) + '</div>';
+      else if (m === '? ') h += '<div class="kd-box kd-pv"><b>Liên hệ dự án</b>' + kdInline(r) + '</div>';
+      else h += '<p>' + kdInline(l) + '</p>';
+    });
+    if (ul) h += '</ul>';
+    return h;
+  }
+  function kdLesson(b, B) {
+    var i = B.indexOf(b), prev = B[i - 1], next = B[i + 1], N = KH().nguon || [];
+    var src = String(b.nguon || '').split(/[;,]\s*/).map(function (m) { return N.filter(function (x) { return x.ma === m.trim(); })[0]; }).filter(Boolean);
+    var h = '<button class="linkish kd-back" data-kdb="">‹ Danh sách bài học</button><article class="card kd-art"><div class="hd"><span class="kd-no">' + (i === 0 ? 'Bắt đầu' : 'Bài ' + i) + '</span><span class="tag">' + esc(b.capDo || '') + '</span><span class="tag">' + esc(b.phut || '') + ' phút</span></div><h3>' + esc(b.ten) + '</h3><div class="small muted">' + esc(b.moTa || '') + '</div><div class="kd-body">' + kdRender(b.noiDung) + '</div>';
+    if (b.congCu) h += '<div class="kd-tools">' + b.congCu.split(',').map(function (k) { var t = TOOLS.filter(function (y) { return y[0] === k.trim(); })[0]; return t ? '<button class="abtn" data-kdtool="' + t[0] + '">⚙ Thực hành: ' + esc(t[1]) + '</button>' : ''; }).join('') + '</div>';
+    if (src.length) h += '<div class="kd-src"><b>Nguồn tham khảo</b><ol>' + src.map(function (s) { return '<li>' + (s.lienKet ? '<a href="' + esc(s.lienKet) + '" target="_blank" rel="noopener">' + esc(s.ten) + ' ↗</a>' : esc(s.ten)) + '</li>'; }).join('') + '</ol></div>';
+    h += '</article><div class="kd-nav">' + (prev ? '<button class="abtn" data-kdb="' + esc(prev.ma) + '">‹ ' + esc(prev.ten) + '</button>' : '<span></span>') + (next ? '<button class="abtn pri" data-kdb="' + esc(next.ma) + '">' + esc(next.ten) + ' ›</button>' : '<button class="abtn pri" data-kdt="tt">Làm bài thử thách ›</button>') + '</div>';
+    return h;
+  }
+
+  /* ---- biểu đồ SVG đơn giản (không dùng thư viện) ---- */
+  function chart(o) {
+    var W = 520, H = o.h || 300, L = 54, R = o.r2 ? 50 : 14, T = 14, Bm = 46, pw = W - L - R, ph = H - T - Bm;
+    var x0 = o.x0 || 0, x1 = o.x1, y1 = o.y1 || 1, y2 = o.y2 || 1;
+    function X(x) { return L + (x - x0) / (x1 - x0) * pw; } function Y(y, r) { return T + ph - y / (r ? y2 : y1) * ph; }
+    var s = '<svg class="kd-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(o.label || '') + '">';
+    for (var i = 0; i <= 4; i++) { var yy = T + ph * i / 4; s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + yy + '" y2="' + yy + '" class="g"/><text x="' + (L - 6) + '" y="' + (yy + 4) + '" text-anchor="end">' + vn(y1 * (4 - i) / 4, o.yd || 0) + '</text>'; if (o.r2) s += '<text x="' + (W - R + 5) + '" y="' + (yy + 4) + '">' + vn(y2 * (4 - i) / 4, o.y2d || 2) + '</text>'; }
+    (o.xt || []).forEach(function (x) { s += '<text x="' + X(x) + '" y="' + (H - Bm + 16) + '" text-anchor="middle">' + vn(x, o.xd || 0) + '</text>'; });
+    s += '<text x="' + (L + pw / 2) + '" y="' + (H - 6) + '" text-anchor="middle" class="ax">' + esc(o.xl || '') + '</text><text x="12" y="' + (T + ph / 2) + '" transform="rotate(-90 12 ' + (T + ph / 2) + ')" text-anchor="middle" class="ax">' + esc(o.yl || '') + '</text>';
+    if (o.r2) s += '<text x="' + (W - 8) + '" y="' + (T + ph / 2) + '" transform="rotate(90 ' + (W - 8) + ' ' + (T + ph / 2) + ')" text-anchor="middle" class="ax">' + esc(o.yl2 || '') + '</text>';
+    (o.bars || []).forEach(function (b) { var bw = Math.max(1, pw / (x1 - x0) * (b.w || 1) - 2); s += '<rect x="' + (X(b.x) - bw / 2) + '" y="' + Y(b.y) + '" width="' + bw + '" height="' + Math.max(0, T + ph - Y(b.y)) + '" class="b' + (b.on ? ' on' : '') + '"/>'; });
+    (o.lines || []).forEach(function (l) { s += '<polyline fill="none" class="l ' + (l.cls || '') + '" points="' + l.pts.map(function (p) { return X(p[0]).toFixed(1) + ',' + Y(p[1], l.r).toFixed(1); }).join(' ') + '"/>'; });
+    (o.hl || []).forEach(function (l) { s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(l.y, l.r) + '" y2="' + Y(l.y, l.r) + '" class="ref"/><text x="' + (W - R - 4) + '" y="' + (Y(l.y, l.r) - 4) + '" text-anchor="end" class="reft">' + esc(l.t) + '</text>'; });
+    (o.pts || []).forEach(function (p) { s += '<circle cx="' + X(p[0]) + '" cy="' + Y(p[1], p[3]) + '" r="6" class="pt"/>' + (p[2] ? '<text x="' + (X(p[0]) + 9) + '" y="' + (Y(p[1], p[3]) - 8) + '" class="ptt">' + esc(p[2]) + '</text>' : ''); });
+    s += '<line x1="' + L + '" x2="' + L + '" y1="' + T + '" y2="' + (T + ph) + '" class="a"/><line x1="' + L + '" x2="' + (W - R) + '" y1="' + (T + ph) + '" y2="' + (T + ph) + '" class="a"/></svg>';
+    if (o.leg) s += '<div class="kd-leg">' + o.leg.map(function (l) { return '<span><i class="' + l[0] + '"></i>' + esc(l[1]) + '</span>'; }).join('') + '</div>';
+    return s;
+  }
+  function nice(v) { var p = Math.pow(10, Math.floor(Math.log10(v || 1))), n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p; }
+
+  /* ---- khung nhập liệu ---- */
+  function fld(tool, key, label, step, unit, opt) {
+    var v = kdVals()[tool][key];
+    return '<label class="kd-in"><span>' + label + (unit ? ' <i>(' + unit + ')</i>' : '') + '</span><input type="number" inputmode="decimal" step="' + (step || 'any') + '" data-kdi="' + tool + '.' + key + '" value="' + esc(v) + '"' + (opt || '') + '></label>';
+  }
+  function sel(tool, key, label, options) {
+    var v = kdVals()[tool][key];
+    return '<label class="kd-in full"><span>' + label + '</span><select class="sel" data-kds="' + tool + '.' + key + '">' + options.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(v) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+  }
+  function kres(rows) { return '<div class="kd-res">' + rows.map(function (r) { return '<div' + (r[3] ? ' class="hi"' : '') + '><span>' + r[0] + '</span><b class="num">' + r[1] + '</b><small>' + (r[2] || '') + '</small></div>'; }).join('') + '</div>'; }
+  function tbOpts() { return (KH().tuabin || []).map(function (t) { return [t.ma, t.ten]; }).concat([['TUY', 'Tùy chỉnh thông số']]); }
+
+  function kdTools() {
+    var h = '<div class="seg wide kd-toolseg" role="group">' + TOOLS.map(function (t) { return '<button data-kdtool="' + t[0] + '" aria-pressed="' + (KD.tool === t[0]) + '">' + esc(t[1]) + '</button>'; }).join('') + '</div>';
+    var f = { weibull: tWeibullIn, docao: tDocaoIn, congsuat: tCongsuatIn, kinhte: tKinhteIn }[KD.tool];
+    h += '<div class="kd-tool"><div class="card kd-inp">' + f() + '</div><div id="kdout">' + kdOut() + '</div></div>';
+    h += '<div class="card small muted" style="margin-top:12px">Công cụ phục vụ học tập và sàng lọc sơ bộ. Giá trị mặc định là giả định minh họa hoặc lấy từ tuabin tham chiếu công khai; khi dùng cho dự án thực tế cần số liệu đo gió, đường cong công suất bảo đảm của nhà sản xuất và mô hình tài chính đầy đủ.</div>';
+    return h;
+  }
+  function kdOut() { try { return { weibull: tWeibull, docao: tDocao, congsuat: tCongsuat, kinhte: tKinhte }[KD.tool](); } catch (e) { return '<div class="cn-warn">Không tính được với số liệu đã nhập: ' + esc(e.message) + '</div>'; } }
+
+  // 1. Weibull
+  function tWeibullIn() {
+    var o = kdVals().weibull;
+    return '<div class="grp-t">Phân phối Weibull</div><div class="small muted">Mô tả tần suất các mức tốc độ gió trong năm.</div><div class="kd-grid">' +
+      sel('weibull', 'mode', 'Cách nhập', [['vk', 'Tốc độ trung bình và k'], ['ck', 'Tham số c và k']]) +
+      (o.mode === 'ck' ? fld('weibull', 'c', 'Tham số tỷ lệ c', 0.1, 'm/s') : fld('weibull', 'v', 'Tốc độ gió trung bình', 0.1, 'm/s')) +
+      fld('weibull', 'k', 'Tham số hình dạng k', 0.1) + fld('weibull', 'rho', 'Khối lượng riêng không khí ρ', 0.005, 'kg/m³') + fld('weibull', 'vin', 'Tốc độ khởi động', 0.5, 'm/s') + fld('weibull', 'vout', 'Tốc độ ngắt', 0.5, 'm/s') + '</div>' +
+      '<div class="kd-presets"><span class="small muted">Thử nhanh k:</span><button class="chip2" data-kdset="weibull.k=1.5">1,5 – gió biến động</button><button class="chip2" data-kdset="weibull.k=2">2 – Rayleigh</button><button class="chip2" data-kdset="weibull.k=3">3 – gió ổn định</button></div>';
+  }
+  function tWeibull() {
+    var o = kdVals().weibull, k = +o.k; if (!(k > 0.5 && k < 10)) throw new Error('k cần trong khoảng 0,5–10');
+    var c = o.mode === 'ck' ? +o.c : +o.v / gam(1 + 1 / k); if (!(c > 0)) throw new Error('tốc độ gió phải lớn hơn 0');
+    var mean = c * gam(1 + 1 / k), sd = c * Math.sqrt(gam(1 + 2 / k) - Math.pow(gam(1 + 1 / k), 2)), mode = k > 1 ? c * Math.pow((k - 1) / k, 1 / k) : 0, med = c * Math.pow(Math.LN2, 1 / k);
+    var wpd = 0.5 * o.rho * Math.pow(c, 3) * gam(1 + 3 / k), wpdMean = 0.5 * o.rho * Math.pow(mean, 3);
+    var pin = wcdf(+o.vin, c, k), pout = 1 - wcdf(+o.vout, c, k), run = 1 - pin - pout;
+    var bins = [], ymax = 0; for (var v = 0; v <= 30; v++) { var hrs = 8760 * (wcdf(v + 0.5, c, k) - wcdf(Math.max(0, v - 0.5), c, k)); bins.push({ x: v, y: hrs, on: v >= o.vin && v <= o.vout }); ymax = Math.max(ymax, hrs); }
+    var cls = mean >= 10 ? 'I (≥ 10 m/s)' : mean >= 8.5 ? 'II (8,5–10 m/s)' : mean >= 7.5 ? 'III (7,5–8,5 m/s)' : 'thấp hơn lớp III';
+    var h = kres([['Tham số c', vn(c, 2), 'm/s'], ['Tốc độ trung bình', vn(mean, 2), 'm/s', 1], ['Tốc độ hay gặp nhất', vn(mode, 2), 'm/s'], ['Trung vị', vn(med, 2), 'm/s'], ['Độ lệch chuẩn', vn(sd, 2), 'm/s'],
+      ['Mật độ công suất gió', vn(wpd, 0), 'W/m²', 1], ['Nếu tính từ tốc độ trung bình', vn(wpdMean, 0), 'W/m² – thấp hơn ' + vn((1 - wpdMean / wpd) * 100, 0) + '%'], ['Thời gian gió < khởi động', vn(pin * 100, 1), '% · ' + vn(pin * 8760, 0) + ' giờ/năm'],
+      ['Thời gian gió > tốc độ ngắt', vn(pout * 100, 2), '%'], ['Thời gian trong dải vận hành', vn(run * 100, 1), '% · ' + vn(run * 8760, 0) + ' giờ/năm', 1], ['Gợi ý lớp gió IEC theo tốc độ trung bình', cls, '']]);
+    var ym = nice(ymax), pts = []; for (var x = 0; x <= 30; x += 0.25) pts.push([x, wpdf(x, c, k) * 8760]);
+    h += '<div class="card kd-ch"><div class="grp-t">Số giờ trong năm theo từng mức tốc độ gió (bước 1 m/s)</div>' + chart({ x1: 30.5, x0: -0.5, y1: ym, xt: [0, 5, 10, 15, 20, 25, 30], xl: 'Tốc độ gió (m/s)', yl: 'Giờ/năm', bars: bins, lines: [{ pts: pts, cls: 'l1' }], label: 'Phân phối Weibull', leg: [['lb on', 'Trong dải vận hành'], ['lb', 'Ngoài dải vận hành'], ['ll l1', 'Đường mật độ Weibull']] }) + '</div>';
+    h += '<details class="card kd-tbl"><summary>Bảng số giờ theo tốc độ gió</summary><div class="tbl-wrap"><table class="tbl kd-t"><thead><tr><th>Tốc độ (m/s)</th><th>Giờ/năm</th><th>Tần suất (%)</th></tr></thead><tbody>' + bins.filter(function (b) { return b.y >= 0.5; }).map(function (b) { return '<tr><td>' + b.x + '</td><td>' + vn(b.y, 0) + '</td><td>' + vn(b.y / 87.6, 1) + '</td></tr>'; }).join('') + '</tbody></table></div></details>';
+    return h;
+  }
+  // 2. Độ cao
+  var Z0 = [['0.0002', 'Mặt biển, mặt nước rộng (0,0002 m)'], ['0.03', 'Đồng cỏ trống, ít vật cản (0,03 m)'], ['0.1', 'Đất nông nghiệp có nhà rải rác (0,1 m)'], ['0.4', 'Ven đô, nhiều cây (0,4 m)']];
+  function tDocaoIn() {
+    var o = kdVals().docao;
+    return '<div class="grp-t">Tốc độ gió theo độ cao</div><div class="small muted">Quy đổi tốc độ gió từ độ cao đo về độ cao trục tuabin.</div><div class="kd-grid">' +
+      sel('docao', 'm', 'Phương pháp', [['log', 'Luật logarit (độ nhám z₀)'], ['pow', 'Luật lũy thừa (hệ số α)']]) + fld('docao', 'v1', 'Tốc độ gió đo được', 0.1, 'm/s') + fld('docao', 'h1', 'Độ cao đo', 1, 'm') + fld('docao', 'h2', 'Độ cao cần quy đổi', 1, 'm') +
+      (o.m === 'log' ? sel('docao', 'z0', 'Độ nhám bề mặt z₀', Z0) : fld('docao', 'a', 'Hệ số trượt gió α', 0.01)) + '</div>' +
+      (o.m === 'pow' ? '<div class="kd-presets"><span class="small muted">Giá trị tham khảo:</span><button class="chip2" data-kdset="docao.a=0.14">0,14 – IEC 61400-3-1 (ngoài khơi)</button><button class="chip2" data-kdset="docao.a=0.2">0,2 – IEC 61400-1 (trên bờ)</button><button class="chip2" data-kdset="docao.a=0.143">1/7</button></div>' : '');
+  }
+  function vh(o, h) { return o.m === 'log' ? o.v1 * Math.log(h / o.z0) / Math.log(o.h1 / o.z0) : o.v1 * Math.pow(h / o.h1, o.a); }
+  function tDocao() {
+    var o = kdVals().docao; o.z0 = +o.z0; if (!(o.h1 > o.z0 && o.h2 > o.z0 && o.v1 > 0)) throw new Error('độ cao và tốc độ phải lớn hơn 0');
+    var v2 = vh(o, o.h2), r = v2 / o.v1, aeq = Math.log(r) / Math.log(o.h2 / o.h1);
+    var h = kres([['Tốc độ tại ' + vn(o.h2) + ' m', vn(v2, 2), 'm/s', 1], ['Tỷ lệ so với độ cao đo', vn(r, 3), 'lần'], ['Mật độ công suất tăng', vn((Math.pow(r, 3) - 1) * 100, 1), '% (tỷ lệ với v³)', 1], ['Hệ số α tương đương', vn(o.m === 'log' ? aeq : +o.a, 3), '']]);
+    var H = [10, 30, 50, 80, 100, 120, 150, 180, 200, 250, 300], pts = [], xm = 0;
+    for (var z = 5; z <= 300; z += 5) { var vv = vh(o, z); pts.push([vv, z]); xm = Math.max(xm, vv); }
+    var x1 = Math.ceil(xm + 1);
+    h += '<div class="card kd-ch"><div class="grp-t">Hồ sơ gió theo độ cao</div>' + chart({ x0: 0, x1: x1, y1: 300, xt: [0, Math.round(x1 / 4), Math.round(x1 / 2), Math.round(3 * x1 / 4), x1], xl: 'Tốc độ gió (m/s)', yl: 'Độ cao (m)', lines: [{ pts: pts, cls: 'l1' }], pts: [[+o.v1, +o.h1, 'Đo'], [v2, +o.h2, 'Quy đổi']], label: 'Hồ sơ gió' }) + '</div>';
+    h += '<div class="card kd-tbl"><div class="tbl-wrap"><table class="tbl kd-t"><thead><tr><th>Độ cao (m)</th><th>Tốc độ (m/s)</th><th>Mật độ công suất so với độ cao đo</th></tr></thead><tbody>' + H.map(function (z) { var vv = vh(o, z); return '<tr' + (z === +o.h2 ? ' class="on"' : '') + '><td>' + z + '</td><td>' + vn(vv, 2) + '</td><td>' + vn(Math.pow(vv / o.v1, 3) * 100, 0) + '%</td></tr>'; }).join('') + '</tbody></table></div></div>';
+    return h;
+  }
+  // 3. Công suất
+  function tCongsuatIn() {
+    var o = kdVals().congsuat, cu = o.tb === 'TUY', t = tbBy(o.tb), ro = cu ? '' : ' readonly';
+    return '<div class="grp-t">Công suất đầu ra của tuabin</div><div class="small muted">Đường cong công suất mô phỏng: P = min(Pđm; ½·ρ·A·Cp·η·v³) trong khoảng khởi động – ngắt.</div><div class="kd-grid">' +
+      sel('congsuat', 'tb', 'Tuabin', tbOpts()) + fld('congsuat', 'v', 'Tốc độ gió', 0.1, 'm/s', ' min="0" max="30"') + fld('congsuat', 'rho', 'Khối lượng riêng không khí ρ', 0.005, 'kg/m³') +
+      fld('congsuat', 'p', 'Công suất định mức', 0.1, 'MW', ro) + fld('congsuat', 'd', 'Đường kính rôto', 1, 'm', ro) + fld('congsuat', 'cp', 'Hệ số Cp thiết kế', 0.01, '', ro) + fld('congsuat', 'eta', 'Hiệu suất cơ – điện η', 0.01, '0–1') +
+      fld('congsuat', 'vin', 'Tốc độ khởi động', 0.5, 'm/s', ro) + fld('congsuat', 'vout', 'Tốc độ ngắt', 0.5, 'm/s', ro) + fld('congsuat', 'tsr', 'TSR tối ưu λ', 0.1, '', ro) + fld('congsuat', 'rpm', 'Tốc độ quay tối đa', 0.1, 'vòng/phút', ro) + '</div>' +
+      '<input type="range" class="kd-range" min="0" max="30" step="0.1" data-kdi="congsuat.v" value="' + esc(o.v) + '" aria-label="Kéo để đổi tốc độ gió">' +
+      (t ? '<div class="small muted">Thông số tuabin tham chiếu theo nguồn ' + esc(t.nguon || '') + ' (xem nguồn tham khảo của khóa học); tốc độ định mức công bố ' + vn(t.vr, 2) + ' m/s. Hiệu suất η là giả định.</div>' : '');
+  }
+  function tCongsuat() {
+    var o = kdVals().congsuat; if (!(o.d > 0 && o.p > 0 && o.cp > 0 && o.cp < 0.6)) throw new Error('kiểm tra công suất, đường kính và Cp (Cp < 0,593)');
+    var R = o.d / 2, A = Math.PI * R * R, v = +o.v, P = pcurve(o, o.rho, v), Pw = 0.5 * o.rho * A * Math.pow(v, 3) / 1e6;
+    var wmax = o.rpm * 2 * Math.PI / 60, w = v > 0 ? Math.min(wmax, o.tsr * v / R) : 0, lam = v > 0 ? w * R / v : 0, vr = Math.pow(2 * o.p * 1e6 / (o.rho * A * o.cp * (o.eta || 1)), 1 / 3);
+    var h = kres([['Công suất phát', vn(P, 2), 'MW · ' + vn(P / o.p * 100, 0) + '% định mức', 1], ['Công suất trong luồng gió', vn(Pw, 2), 'MW'], ['Giới hạn Betz (59,3%)', vn(Pw * 16 / 27, 2), 'MW'],
+      ['Hệ số công suất thực tế Cp', v > 0 && P > 0 ? vn(P / Pw, 3) : '—', 'gồm cả η', 1], ['Tỷ số tốc độ đầu cánh λ', v > 0 && P > 0 ? vn(lam, 1) : '—', ''], ['Tốc độ quay rôto', P > 0 ? vn(w * 60 / 2 / Math.PI, 2) : '—', 'vòng/phút'],
+      ['Tốc độ đầu cánh', P > 0 ? vn(w * R, 0) : '—', 'm/s'], ['Diện tích quét', vn(A, 0), 'm²'], ['Tốc độ định mức theo mô hình', vn(vr, 2), 'm/s']]);
+    var pc = [], cpc = []; for (var x = 0; x <= 30; x += 0.1) { var p = pcurve(o, o.rho, x); pc.push([x, p]); cpc.push([x, x > 0 && p > 0 ? p / (0.5 * o.rho * A * Math.pow(x, 3) / 1e6) : 0]); }
+    var ym = nice(o.p * 1.05);
+    h += '<div class="card kd-ch"><div class="grp-t">Đường cong công suất và hệ số Cp</div>' + chart({ x0: 0, x1: 30, y1: ym, y2: 0.6, r2: 1, xt: [0, 5, 10, 15, 20, 25, 30], xl: 'Tốc độ gió (m/s)', yl: 'Công suất (MW)', yl2: 'Cp', y2d: 2, lines: [{ pts: pc, cls: 'l1' }, { pts: cpc, cls: 'l2', r: 1 }], hl: [{ y: 16 / 27, r: 1, t: 'Betz 0,593' }], pts: [[v, P, vn(P, 1) + ' MW']], label: 'Đường cong công suất', leg: [['ll l1', 'Công suất'], ['ll l2', 'Cp (trục phải)'], ['ll ref', 'Giới hạn Betz']] }) + '</div>';
+    return h;
+  }
+  // 4. Kinh tế
+  function tKinhteIn() {
+    var o = kdVals().kinhte, M = KH().macDinh || {};
+    return '<div class="grp-t">Tài nguyên gió và hiệu quả kinh tế</div><div class="small muted">Tính sản lượng năm từ phân phối Weibull và đường cong công suất mô phỏng, sau đó tính LCOE, NPV, IRR ở mức dự án (trước thuế, trước vốn vay).</div>' +
+      '<div class="kd-sub">Gió và tuabin</div><div class="kd-grid">' + fld('kinhte', 'v', 'Tốc độ gió TB tại độ cao trục', 0.1, 'm/s') + fld('kinhte', 'k', 'Tham số k Weibull', 0.1) + fld('kinhte', 'rho', 'Khối lượng riêng không khí', 0.005, 'kg/m³') +
+      sel('kinhte', 'tb', 'Tuabin tham chiếu', (KH().tuabin || []).map(function (t) { return [t.ma, t.ten]; })) + fld('kinhte', 'n', 'Số tuabin', 1) + '</div>' +
+      '<div class="kd-sub">Tổn thất và độ không đảm bảo (%) – giả định</div><div class="kd-grid">' + fld('kinhte', 'lw', 'Vệt gió', 0.5, '%') + fld('kinhte', 'la', 'Khả dụng', 0.5, '%') + fld('kinhte', 'le', 'Tổn thất điện', 0.5, '%') + fld('kinhte', 'lo', 'Tổn thất khác', 0.5, '%') + fld('kinhte', 'sig', 'Độ không đảm bảo σ', 0.5, '%') + '</div>' +
+      '<div class="kd-sub">Chi phí và tài chính</div><div class="kd-grid">' + fld('kinhte', 'capex', 'Suất đầu tư', 10, 'USD/kW') + fld('kinhte', 'opex', 'Chi phí vận hành', 1, 'USD/kW/năm') + fld('kinhte', 'life', 'Thời gian vận hành', 1, 'năm') + fld('kinhte', 'r', 'Suất chiết khấu', 0.5, '%') +
+      sel('kinhte', 'vung', 'Giá bán (khung giá QĐ 1824)', (M.giaDien || []).map(function (g) { return [g.vung, g.vung + ' – ' + vn(g.gia, 1) + ' đ/kWh']; }).concat([['TUY', 'Tự nhập giá']])) + fld('kinhte', 'gia', 'Giá bán điện', 1, 'đ/kWh', o.vung === 'TUY' ? '' : ' readonly') + fld('kinhte', 'fx', 'Tỷ giá – giả định', 100, 'đ/USD') + '</div>' +
+      '<div class="small muted">Nguồn mặc định: suất đầu tư – ' + esc(M.capexNguon || '') + '; giá bán – ' + esc(M.giaNguon || '') + '. Chi phí vận hành, tổn thất, σ, suất chiết khấu, tỷ giá là giả định minh họa.</div>';
+  }
+  function kinhte(o, dv, dc, dg) {
+    var t = tbBy(o.tb); if (!t) throw new Error('chưa chọn tuabin');
+    var k = +o.k, vmean = (+o.v) * (dv || 1), c = vmean / gam(1 + 1 / k), e1 = 0;
+    for (var v = 0.05; v < 31; v += 0.1) e1 += (wcdf(v + 0.05, c, k) - wcdf(v - 0.05, c, k)) * pcurve(t, +o.rho, v);
+    var aepT = e1 * 8760, cap = t.p * o.n, gross = aepT * o.n; // MWh
+    var lf = (1 - o.lw / 100) * (1 - o.la / 100) * (1 - o.le / 100) * (1 - o.lo / 100), net = gross * lf;
+    var capex = o.capex * (dc || 1) * cap * 1000, opex = o.opex * cap * 1000, r = o.r / 100, n = +o.life;
+    var crf = r > 0 ? r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1) : 1 / n, lcoe = (capex * crf + opex) / net; // USD/MWh
+    var price = o.gia * (dg || 1) / o.fx * 1000, rev = net * price, cf = rev - opex; // USD/năm
+    var npv = -capex; for (var y = 1; y <= n; y++) npv += cf / Math.pow(1 + r, y);
+    function npvAt(rr) { var s = -capex; for (var y = 1; y <= n; y++) s += cf / Math.pow(1 + rr, y); return s; }
+    var irr = NaN; if (npvAt(0) > 0) { var lo = 0, hi = 1; for (var i = 0; i < 80; i++) { var mid = (lo + hi) / 2; if (npvAt(mid) > 0) lo = mid; else hi = mid; } irr = lo; }
+    return { t: t, c: c, vmean: vmean, aepT: aepT, cap: cap, gross: gross, net: net, lf: lf, cfac: net / (cap * 8760), capex: capex, opex: opex, lcoe: lcoe, price: price, rev: rev, cf: cf, npv: npv, irr: irr, pb: cf > 0 ? capex / cf : NaN, p90: net * (1 - 1.282 * o.sig / 100) };
+  }
+  function tKinhte() {
+    var o = kdVals().kinhte, R = kinhte(o), fx = +o.fx;
+    var cls = R.vmean >= 10 ? 'I' : R.vmean >= 8.5 ? 'II' : R.vmean >= 7.5 ? 'III' : 'dưới III';
+    var h = kres([['Quy mô trang trại', vn(R.cap, 0), 'MW · ' + o.n + ' × ' + vn(R.t.p, 1) + ' MW'], ['Sản lượng thô', vn(R.gross / 1000, 0), 'GWh/năm'], ['Sản lượng ròng P50', vn(R.net / 1000, 0), 'GWh/năm · tổn thất ' + vn((1 - R.lf) * 100, 1) + '%', 1],
+      ['Sản lượng P90 (1 năm)', vn(R.p90 / 1000, 0), 'GWh/năm', 1], ['Hệ số công suất ròng', vn(R.cfac * 100, 1), '% · ' + vn(R.cfac * 8760, 0) + ' giờ đầy tải'], ['Lớp gió IEC gợi ý', cls, 'theo tốc độ TB ' + vn(R.vmean, 1) + ' m/s'],
+      ['Tổng vốn đầu tư', vn(R.capex / 1e6, 0), 'triệu USD'], ['LCOE', vn(R.lcoe, 1), 'USD/MWh · ' + vn(R.lcoe * fx / 1000, 0) + ' đ/kWh', 1], ['Giá bán', vn(o.gia, 1), 'đ/kWh · ' + vn(R.price, 1) + ' USD/MWh'],
+      ['Doanh thu năm', vn(R.rev / 1e6, 1), 'triệu USD'], ['NPV', vn(R.npv / 1e6, 0), 'triệu USD @ ' + vn(o.r, 1) + '%', 1], ['IRR dự án', isFinite(R.irr) ? vn(R.irr * 100, 1) : 'Âm', '%', 1], ['Hoàn vốn giản đơn', isFinite(R.pb) ? vn(R.pb, 1) : '—', 'năm']]);
+    h += '<div class="kd-verdict ' + (R.lcoe * fx / 1000 <= o.gia ? 'ok' : 'no') + '">' + (R.lcoe * fx / 1000 <= o.gia ? 'LCOE thấp hơn giá bán: dự án có biên lợi nhuận với giả định hiện tại.' : 'LCOE cao hơn giá bán: với giả định hiện tại, dự án chưa bù đắp được chi phí vốn.') + '</div>';
+    // dòng tiền tích lũy
+    var n = +o.life, cum = -R.capex, pts = [[0, -R.capex / 1e6]];
+    for (var y = 1; y <= n; y++) { cum += R.cf; pts.push([y, cum / 1e6]); }
+    h += '<div class="card kd-ch"><div class="grp-t">Dòng tiền tích lũy (không chiết khấu), triệu USD</div>' + cashChart(pts, n) + '</div>';
+    // độ nhạy
+    function row(lb, a, b) { return '<tr><td>' + lb + '</td><td>' + vn(a.lcoe, 1) + '</td><td>' + (isFinite(a.irr) ? vn(a.irr * 100, 1) + '%' : 'Âm') + '</td><td>' + vn(b.lcoe, 1) + '</td><td>' + (isFinite(b.irr) ? vn(b.irr * 100, 1) + '%' : 'Âm') + '</td></tr>'; }
+    h += '<div class="card kd-tbl"><div class="grp-t">Phân tích độ nhạy</div><div class="tbl-wrap"><table class="tbl kd-t"><thead><tr><th>Biến</th><th>LCOE (−)</th><th>IRR (−)</th><th>LCOE (+)</th><th>IRR (+)</th></tr></thead><tbody>' +
+      row('Tốc độ gió ±5%', kinhte(o, 0.95), kinhte(o, 1.05)) + row('Suất đầu tư ±10%', kinhte(o, 1, 0.9), kinhte(o, 1, 1.1)) + row('Giá bán ±10%', kinhte(o, 1, 1, 0.9), kinhte(o, 1, 1, 1.1)) +
+      '</tbody></table></div><div class="small muted" style="margin-top:6px">LCOE tính bằng USD/MWh. Giá bán không ảnh hưởng LCOE.</div></div>';
+    return h;
+  }
+  function cashChart(pts, n) {
+    var lo = Math.min.apply(null, pts.map(function (p) { return p[1]; })), hi = Math.max(0, Math.max.apply(null, pts.map(function (p) { return p[1]; })));
+    var W = 520, H = 280, L = 62, R = 14, T = 12, B = 40, pw = W - L - R, ph = H - T - B;
+    function X(x) { return L + x / n * pw; } function Y(y) { return T + (hi - y) / (hi - lo || 1) * ph; }
+    var s = '<svg class="kd-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Dòng tiền tích lũy">';
+    [lo, lo / 2, 0, hi / 2, hi].forEach(function (v) { if (v > hi || v < lo) return; s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v) + '" y2="' + Y(v) + '" class="g"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4) + '" text-anchor="end">' + vn(v, 0) + '</text>'; });
+    var bw = pw / (n + 1) - 2;
+    pts.forEach(function (p) { var y0 = Y(0), y1 = Y(p[1]); s += '<rect x="' + (X(p[0]) - bw / 2) + '" y="' + Math.min(y0, y1) + '" width="' + bw + '" height="' + Math.abs(y1 - y0) + '" class="' + (p[1] < 0 ? 'bn' : 'bp') + '"/>'; });
+    for (var x = 0; x <= n; x += 5) s += '<text x="' + X(x) + '" y="' + (H - B + 16) + '" text-anchor="middle">' + x + '</text>';
+    s += '<text x="' + (L + pw / 2) + '" y="' + (H - 4) + '" text-anchor="middle" class="ax">Năm</text><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(0) + '" y2="' + Y(0) + '" class="a"/></svg>';
+    return s;
+  }
+
+  /* ---- thử thách ---- */
+  function kdQuiz() {
+    var Q = KH().cauHoi || [], i = KD.qi; if (!Q.length) return '<div class="card small">Chưa có câu hỏi.</div>';
+    var done = Object.keys(KD.qa).length, ok = Q.filter(function (q, j) { return KD.qa[j] === q.dap; }).length;
+    if (i >= Q.length) return '<div class="card kd-score"><div class="grp-t">Kết quả</div><div class="v num">' + ok + '/' + Q.length + '</div><p>' + (ok / Q.length >= 0.8 ? 'Rất tốt – anh/chị đã nắm vững kiến thức nền của khóa học.' : ok / Q.length >= 0.5 ? 'Khá – nên đọc lại các bài có câu trả lời sai.' : 'Nên học lại các bài trước khi làm lại thử thách.') + '</p><button class="abtn pri" data-kdq="reset">Làm lại</button></div>';
+    var q = Q[i], a = KD.qa[i], b = (KH().bai || []).filter(function (x) { return x.ma === q.bai; })[0];
+    var h = '<div class="card kd-q"><div class="hd"><span class="tag">Câu ' + (i + 1) + '/' + Q.length + '</span>' + (b ? '<span class="tag">' + esc(b.ten) + '</span>' : '') + '<span class="tag g">Đúng ' + ok + '/' + done + '</span></div><div class="t">' + esc(q.hoi) + '</div><div class="kd-opts">' +
+      ['a', 'b', 'c', 'd'].filter(function (k) { return q[k]; }).map(function (k) { var cls = a ? (k === q.dap ? ' ok' : k === a ? ' no' : '') : ''; return '<button class="kd-opt' + cls + '" data-kdq="' + k + '"' + (a ? ' disabled' : '') + '><b>' + k + '.</b> ' + esc(q[k]) + '</button>'; }).join('') + '</div>';
+    if (a) h += '<div class="kd-box ' + (a === q.dap ? 'kd-ex' : 'kd-note') + '"><b>' + (a === q.dap ? 'Chính xác' : 'Chưa đúng – đáp án ' + q.dap) + '</b>' + esc(q.giai || '') + '</div><div class="kd-nav"><span></span><button class="abtn pri" data-kdq="next">' + (i + 1 < Q.length ? 'Câu tiếp theo ›' : 'Xem kết quả ›') + '</button></div>';
+    return h + '</div>';
+  }
+  function kdClick(t) {
+    var ds = t.dataset;
+    if (ds.kdt) { KD.tab = ds.kdt; if (ds.kdt === 'bai') KD.bai = ''; if (S.page !== 'kd') go('kd'); else { render(); window.scrollTo(0, 0); } return true; }
+    if (ds.kdb !== undefined) { KD.tab = 'bai'; KD.bai = ds.kdb; if (S.page !== 'kd') go('kd'); else { render(); window.scrollTo(0, 0); } return true; }
+    if (ds.kdtool) { closeSheet(true); KD.tab = 'cc'; KD.tool = ds.kdtool; if (S.page !== 'kd') go('kd'); else { render(); window.scrollTo(0, 0); } return true; }
+    if (ds.kdset) { var p = ds.kdset.split('='), q = p[0].split('.'); kdVals()[q[0]][q[1]] = +p[1]; render(); return true; }
+    if (ds.kdq) { if (ds.kdq === 'next') KD.qi++; else if (ds.kdq === 'reset') { KD.qi = 0; KD.qa = {}; } else KD.qa[KD.qi] = ds.kdq; $('#kdq').innerHTML = kdQuiz(); return true; }
+    return false;
+  }
+  function kdBind() {
+    document.querySelectorAll('[data-kdi]').forEach(function (e) {
+      e.oninput = function () { var q = e.dataset.kdi.split('.'), v = parseFloat(String(e.value).replace(',', '.')); if (!isFinite(v)) return; kdVals()[q[0]][q[1]] = v;
+        document.querySelectorAll('[data-kdi="' + e.dataset.kdi + '"]').forEach(function (x) { if (x !== e) x.value = v; }); var o = $('#kdout'); if (o) o.innerHTML = kdOut(); };
+    });
+    document.querySelectorAll('[data-kds]').forEach(function (e) {
+      e.onchange = function () {
+        var q = e.dataset.kds.split('.'), V = kdVals()[q[0]]; V[q[1]] = e.value;
+        if (q[0] === 'congsuat' && q[1] === 'tb' && e.value !== 'TUY') tbVals(V, tbBy(e.value));
+        if (q[0] === 'kinhte' && q[1] === 'vung') { var g = ((KH().macDinh || {}).giaDien || []).filter(function (x) { return x.vung === e.value; })[0]; if (g) V.gia = g.gia; }
+        if (q[0] === 'docao' && q[1] === 'z0') V.z0 = +e.value;
+        render();
+      };
+    });
   }
 
   /* ================= BẢNG CHI TIẾT ================= */
@@ -1293,7 +1667,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
       ['Tình trạng chi tiết', val(d.tinhTrangChiTiet)], ['Sửa đổi, thay thế', val(d.suaDoi)], ['Chủ đề', val(d.chuDe)], ['Xác minh', '<span class="pill ' + xmCls(d.xacMinh) + '">' + esc(d.xacMinh || '') + '</span>'], ['Ghi chú', val(d.ghiChu)]]);
     var tts = (d.trongTam || []).filter(function (t) { return !t.loi; });
     if (tts.length) body += '<div class="sec" style="margin-top:16px">' + ic('hl', 18) + ' Nội dung cần tập trung đọc (' + tts.length + ')</div><ol class="tt-list">' + tts.map(function (t) {
-      return '<li><button class="tt-it" ' + (t.nv && D.nguyenVan[t.nv] ? 'data-nvk="' + esc(t.nv) + '"' : 'disabled') + '><span class="hlw">' + esc(t.label) + '</span><span class="small muted">' + esc(t.tieuDe || '') + '</span></button>' +
+      return '<li><button class="tt-it" ' + (t.nv && D.nguyenVan[t.nv] ? 'data-nvk="' + esc(t.nv) + '"' : 'disabled') + '><span class="hlw">' + esc(t.label) + '</span><span class="small muted">' + esc(t.tieuDe || '') + '</span><span class="tt-lv">' + lvTags(ttLv(t, d)) + '</span></button>' +
         (pdfAt(d) && (t.trang || []).length ? '<a class="pg" href="' + pdfAt(d, t.trang[0]) + '" target="_blank" rel="noopener">tr. ' + t.trang[0] + '</a>' : '') + '</li>'; }).join('') + '</ol>';
     if (rel.length) body += '<div class="sec" style="margin-top:16px">Điều khoản dẫn chiếu (' + rel.length + ')</div>' + rel.map(function (r) { return '<div class="item" style="--c:var(--navy);margin-bottom:8px"><div class="t">' + esc(r.dieuKhoan) + '</div><div class="small" style="margin-top:4px">' + esc(r.noiDung) + '</div>' + (r.nguyenVan ? '<button class="linkish small" style="margin-top:6px" data-nvk="' + esc(r.nguyenVan) + '">Đọc nguyên văn ›</button>' : '') + '</div>'; }).join('');
     body += '<div>' + (d.tep && !d.noiBo ? '<a class="abtn pri" href="' + esc(d.tep) + '" target="_blank" rel="noopener">' + ic('file', 18) + (tts.length ? 'Mở bản PDF đã đánh dấu vàng' : 'Mở tệp PDF') + (d.soTrang ? ' · ' + d.soTrang + ' trang' : '') + '</a>' : '') +
@@ -1359,6 +1733,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     (qt.buoc || []).forEach(function (b, i) { if (norm([b.tenVi, b.tenGoc, b.mucTieu, b.dauRa].join(' ')).indexOf(q) >= 0) qi.push('<button class="r" data-t="ph" data-k="' + i + '"><div class="a">Giai đoạn ' + b.so + ': ' + hl(b.tenVi, q) + '</div><div class="b">' + hl(b.mucTieu, q) + '</div></button>'); });
     ((qt.gd1 || {}).buoc || []).forEach(function (b) { if (norm([b.ten, b.trachNhiem, b.ketQua].join(' ')).indexOf(q) >= 0) qi.push('<button class="r" data-t="qt"><div class="a">Giai đoạn 1 – Bước ' + b.so + ': ' + hl(b.ten, q) + '</div><div class="b">' + hl(b.ketQua, q) + '</div></button>'); });
     grp('Quy trình', qi);
+    grp('Khóa học điện gió', ((D.khoaHocDG || {}).bai || []).filter(function (b) { return norm([b.ten, b.moTa, (b.noiDung || []).join(' ')].join(' ')).indexOf(q) >= 0; }).map(function (b) { var txt = (b.noiDung || []).join(' ').replace(/\[\[VB\d+\|([^\]]+)\]\]/g, '$1').replace(/\{\{\w+\|([^}]+)\}\}/g, '$1'); return '<button class="r" data-t="kd" data-k="' + esc(b.ma) + '"><div class="a">' + hl(b.ten, q) + '</div><div class="b">' + hl(txt, q) + '</div></button>'; }));
     grp('Từ điển ĐGNK', (D.tuDien || []).filter(function (x) { return norm([x.en, x.vi, x.vt].join(' ')).indexOf(q) >= 0; }).map(function (x) { return '<button class="r" data-t="td" data-k="' + esc(x.en) + '"><div class="a">' + hl(x.en, q) + (x.vt ? ' (' + hl(x.vt, q) + ')' : '') + ' – ' + hl(x.vi, q) + '</div><div class="b">' + esc(x.nhom) + '</div></button>'; }));
     grp('Bản tin thị trường', (D.banTin || []).filter(function (b) { return hit(b, ['noiDung', 'nguon', 'nhom']); }).map(function (b) { return '<button class="r" data-t="bt" data-k="' + esc(b.tuan) + '"><div class="a">' + hl(b.noiDung, q) + '</div><div class="b">Tuần ' + esc(b.kyBao || '') + ' · ' + esc(b.nhom) + '</div></button>'; }));
     return G.length ? G.join('') : '<div class="small muted" style="padding:14px 8px">Không tìm thấy kết quả cho "' + esc(raw) + '".</div>';
@@ -1376,6 +1751,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     else if (t === 'qt') go('qt');
     else if (t === 'td') { S.tdQ = k; S.tdNhom = ''; S.tdNg = ''; S.tdN = 40; go('td'); }
     else if (t === 'bt') { S.btTuan = k; go('bt'); }
+    else if (t === 'kd') { KD.tab = 'bai'; KD.bai = k; go('kd'); }
   }
 
   /* ================= LƯU EXCEL ================= */
@@ -1412,7 +1788,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     $('#app').onclick = onClick;
   }
   function render() {
-    var fn = { tq: pgTQ, nv: pgNV, kh: pgKH, vb: pgVB, qt: pgQT, dt: pgDT, da: pgDA, td: pgTD, bt: pgBT, cn: pgCN }[S.page] || pgTQ;
+    var fn = { tq: pgTQ, nv: pgNV, kh: pgKH, vb: pgVB, qt: pgQT, dt: pgDT, da: pgDA, td: pgTD, bt: pgBT, cn: pgCN, kd: pgKD }[S.page] || pgTQ;
     $('#view').innerHTML = fn() + '<div class="foot">Cập nhật ' + fd(D.thongTin.capNhat) + ' · ' + esc(D.thongTin.nguoiCapNhat || '') + ' · ' + esc(D.thongTin.tanSuat || '') + ' · Phiên bản ' + esc(D.thongTin.phienBan || '') + '<br>' + esc(D.thongTin.slogan || '') + '</div>';
     $('#snav').innerHTML = navHTML();
     document.querySelectorAll('[data-p]').forEach(function (b) { if (b.dataset.p === S.page) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
@@ -1421,6 +1797,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     var tq = $('#tdq'), tt; if (tq) tq.oninput = function () { clearTimeout(tt); tt = setTimeout(function () { S.tdQ = tq.value; S.tdN = 40; $('#tdres').innerHTML = tdRes(); }, 160); };
     [['tdNhom', 'td-nhom'], ['tdNg', 'td-ng']].forEach(function (p) { var e = $('#' + p[1]); if (e) e.onchange = function () { S[p[0]] = e.value; S.tdN = 40; $('#tdres').innerHTML = tdRes(); }; });
     var bw = $('#btw'); if (bw) bw.onchange = function () { S.btTuan = bw.value; render(); };
+    if (S.page === 'kd') kdBind();
     var cf = $('#cnfile'); if (cf) cf.onchange = function () { if (cf.files[0]) cnRead(cf.files[0]); cf.value = ''; };
     [['loai', 'f-loai'], ['tt', 'f-tt'], ['xm', 'f-xm']].forEach(function (p) { var s = $('#' + p[1]); if (s) s.onchange = function () { S[p[0]] = s.value === 'Chưa xác định' ? 'Chưa xác định' : s.value; $('#res').innerHTML = vbRes(); }; });
   }
@@ -1445,6 +1822,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
     if (t.id === 'cnview') { if (NEW) { D = NEW.data; NEW.applied = true; S.page = 'tq'; shell(); render(); window.scrollTo(0, 0); toast('Đang xem thử dữ liệu mới – chưa đưa lên web.'); } return; }
     if (ds.tdmore) { S.tdN += 40; $('#tdres').innerHTML = tdRes(); return; }
     if (t.id === 'bout') return window.__logout && window.__logout();
+    if (kdClick(t)) return;
     if (ds.z) return setZoom(ds.z);
     if (ds.p) return go(ds.p);
     if (ds.ph) { S.ph = ds.ph; S.lv = ''; return render(); }
@@ -1469,7 +1847,7 @@ mark{background:#FFE58A;color:inherit;border-radius:2px;padding:0 1px}
   });
 
   window.startApp = function (data) {
-    D = data; S.page = 'tq'; S.ph = 'ALL'; S.st = 'all'; S.q = ''; S.tdQ = ''; S.btTuan = ''; NEW = null; D0 = data;
+    D = data; S.page = 'tq'; S.ph = 'ALL'; S.st = 'all'; S.q = ''; S.tdQ = ''; S.btTuan = ''; NEW = null; D0 = data; KD.tab = 'bai'; KD.bai = ''; KD.qi = 0; KD.qa = {}; KD.v = null;
     D.phapLy = D.phapLy || []; D.dieuKhoan = D.dieuKhoan || []; D.nhiemVu = D.nhiemVu || []; D.keHoach = D.keHoach || [];
     shell(); $('#app').hidden = false; render();
   };

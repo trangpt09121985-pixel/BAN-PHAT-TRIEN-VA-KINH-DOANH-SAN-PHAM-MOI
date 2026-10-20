@@ -251,7 +251,7 @@ ol.g{padding-left:20px;margin:6px 0 0}
 
 </script>
 <script>
-/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.0
+/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.1
    Sheet có tab VÀNG: cập nhật hằng tuần; cột tô vàng là cột cần sửa. Sheet tab XÁM: dữ liệu tra cứu, chỉ sửa khi có văn bản/nội dung mới. */
 (function (G) {
   'use strict';
@@ -278,7 +278,7 @@ ol.g{padding-left:20px;margin:6px 0 0}
       ['xacMinh', 'Trạng thái xác minh', 't', 18], ['lienKet', 'Liên kết chính thức', 't', 28], ['tep', 'Tệp PDF đánh dấu vàng (đường dẫn)', 't', 34], ['tepGoc', 'Tệp Word gốc (đường dẫn)', 't', 30], ['soTrang', 'Số trang', 'n', 8],
       ['noiBo', 'Văn bản nội bộ?', 'b', 9, ['Có', 'Không']], ['tuKhoa', 'Từ khóa', 't', 22], ['ghiChu', 'Ghi chú', 't', 40]] },
     { sheet: 'TrongTam', special: 'trongTam', cols: [
-      ['vb', 'Mã văn bản', 't', 8], ['id', 'Mã nội dung', 't', 11], ['label', 'Nội dung cần tập trung đọc (nhãn)', 't', 40], ['tieuDe', 'Điều / đoạn', 't', 50], ['trang', 'Trang trong PDF (phẩy)', 'l', 14], ['nv', 'Mã nguyên văn', 't', 14]] },
+      ['vb', 'Mã văn bản', 't', 8], ['id', 'Mã nội dung', 't', 11], ['label', 'Nội dung cần tập trung đọc (nhãn)', 't', 40], ['tieuDe', 'Điều / đoạn', 't', 50], ['trang', 'Trang trong PDF (phẩy)', 'l', 14], ['nv', 'Mã nguyên văn', 't', 14], ['lv', 'Lĩnh vực cần đọc (DGNK, SPM, CHUNG – phẩy)', 'l', 16]] },
     { sheet: 'DieuKhoan', path: 'dieuKhoan', cols: [
       ['ma', 'Mã', 't', 7], ['linhVuc', 'Lĩnh vực (DGNK/SPM/CHUNG)', 't', 9, ['DGNK', 'SPM', 'CHUNG']], ['chuDe', 'Chủ đề', 't', 22], ['vb', 'Mã văn bản', 't', 8], ['soHieu', 'Số hiệu', 't', 16],
       ['dieuKhoan', 'Điều, khoản', 't', 22], ['noiDung', 'Nội dung quy định (tóm tắt)', 't', 56], ['yNghia', 'Ý nghĩa với PVEP', 't', 42], ['xacMinh', 'Xác minh', 't', 16], ['nguyenVan', 'Mã nguyên văn', 't', 14]] },
@@ -315,10 +315,23 @@ ol.g{padding-left:20px;margin:6px 0 0}
       ['ma', 'Mã', 't', 8], ['ten', 'Khu vực', 't', 28], ['phong', 'Phòng', 't', 8], ['moTa', 'Mô tả', 't', 60], ['vaiTro', 'Vai trò PVEP', 't', 44], ['uuTien', 'Thứ tự ưu tiên', 'n', 9]] },
     { sheet: 'KinhPhi2027', path: 'chiTieu.kinhPhi2027', cols: [
       ['linhVuc', 'Lĩnh vực', 't', 24], ['phong', 'Phòng', 't', 8], ['giaTri', 'Giá trị', 'n', 10], ['donVi', 'Đơn vị', 't', 12], ['ghiChu', 'Ghi chú', 't', 30]] },
+    { sheet: 'KhoaHoc_Bai', path: 'khoaHocDG.bai', cols: [
+      ['ma', 'Mã bài', 't', 8], ['chuong', 'Chương', 't', 12], ['ten', 'Tên bài', 't', 34], ['moTa', 'Mô tả ngắn', 't', 44], ['phut', 'Thời lượng (phút)', 'n', 9],
+      ['capDo', 'Cấp độ', 't', 10, ['Cơ bản', 'Trung cấp', 'Nâng cao']], ['congCu', 'Công cụ liên quan (weibull, docao, congsuat, kinhte)', 't', 20], ['nguon', 'Nguồn (mã, chấm phẩy)', 't', 18],
+      ['noiDung', 'Nội dung (mỗi dòng một đoạn; ## tiêu đề, - gạch đầu dòng, = công thức, ! lưu ý, > ví dụ, ? liên hệ dự án)', 'p', 100]] },
+    { sheet: 'KhoaHoc_CauHoi', path: 'khoaHocDG.cauHoi', cols: [
+      ['bai', 'Mã bài', 't', 8], ['hoi', 'Câu hỏi', 't', 60], ['a', 'Phương án a', 't', 26], ['b', 'Phương án b', 't', 26], ['c', 'Phương án c', 't', 26], ['d', 'Phương án d', 't', 26],
+      ['dap', 'Đáp án (a/b/c/d)', 't', 8, ['a', 'b', 'c', 'd']], ['giai', 'Giải thích', 't', 50]] },
+    { sheet: 'KhoaHoc_Nguon', path: 'khoaHocDG.nguon', cols: [
+      ['ma', 'Mã nguồn', 't', 8], ['ten', 'Tên tài liệu', 't', 80], ['lienKet', 'Liên kết', 't', 60]] },
+    { sheet: 'TuabinThamChieu', path: 'khoaHocDG.tuabin', cols: [
+      ['ma', 'Mã', 't', 8], ['ten', 'Tên tuabin', 't', 34], ['p', 'Công suất (MW)', 'n', 10], ['d', 'Đường kính rôto (m)', 'n', 10], ['hub', 'Độ cao trục (m)', 'n', 10],
+      ['vin', 'Cut-in (m/s)', 'n', 9], ['vr', 'Định mức (m/s)', 'n', 9], ['vout', 'Cut-out (m/s)', 'n', 9], ['rpm', 'Tốc độ quay tối đa (vòng/phút)', 'n', 10], ['cp', 'Cp thiết kế', 'n', 9], ['tsr', 'TSR tối ưu', 'n', 9], ['eta', 'Hiệu suất điện – cơ (0–1)', 'n', 9], ['nguon', 'Nguồn', 't', 8]] },
   ];
   var CFG = ['phong', 'phuongThuc', 'chiTieu.quyHoachDGNK', 'quyTrinh.DGNK.ten', 'quyTrinh.DGNK.trangThai', 'quyTrinh.DGNK.nguon', 'quyTrinh.DGNK.gd1.ten',
     'quyTrinh.DGNK.gd1.trangThai', 'quyTrinh.DGNK.gd1.luuY', 'quyTrinh.DGNK.sangLoc', 'quyTrinh.SPM', 'banTinNhom', 'tuDienNhom',
-    'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu'];
+    'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu',
+    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh'];
   var INFO = [['capNhat', 'Ngày cập nhật dữ liệu (mốc tính quá hạn) – SỬA MỖI TUẦN', 'd', 1], ['nguoiCapNhat', 'Người cập nhật', 't', 1], ['tanSuat', 'Tần suất cập nhật', 't'],
     ['nguongSapHan', 'Ngưỡng "sắp đến hạn" (ngày)', 'n'], ['phienBan', 'Phiên bản', 't'], ['tenBan', 'Tên Ban', 't'], ['tenTCT', 'Tên Tổng Công ty', 't'], ['slogan', 'Khẩu hiệu', 't'],
     ['laDuLieuMau', 'Là dữ liệu mẫu?', 'b'], ['ghiChu', 'Ghi chú chung (hiện ở trang Tổng quan)', 't', 1]];
