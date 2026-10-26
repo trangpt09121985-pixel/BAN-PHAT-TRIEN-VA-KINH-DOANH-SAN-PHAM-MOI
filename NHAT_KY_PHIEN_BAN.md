@@ -1,5 +1,18 @@
 # Nhật ký phiên bản – Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới
 
+## Phiên bản 3.5 – 26/10/2026
+- Đổi tài khoản đăng nhập của Dashboard (thông báo tài khoản qua kênh nội bộ, không ghi vào kho).
+- Khóa học điện gió: Bài 6 "Thiết kế tuabin gió" bổ sung tải cực hạn, tải mỏi và trường hợp tải thiết kế (quy tắc Miner); kết cấu cánh (spar cap, shear web, vỏ sandwich), moay-ơ, bedplate, tháp; hệ truyền động (mô-men định mức, bánh răng hành tinh, hộp số hay truyền động trực tiếp, độ tin cậy); điều khiển pitch độc lập; tối ưu đa mục tiêu; tiêu chuẩn và chứng nhận (IEC 61400-22 đã rút lại từ 31/8/2018); tuabin trục đứng.
+- Bài mới 7 "Nền móng ngoài khơi và điện gió nổi". Bài 8 "Chế tạo, vận chuyển và lắp đặt" bổ sung sản xuất cánh (VARI, RTM, kiểm tra không phá hủy), tháp, hộp số, máy phát, lắp ráp nacelle, ràng buộc vận chuyển đường bộ và đường biển. Khóa học có 13 bài, 36 câu hỏi; 10 hình minh họa mới.
+- Mục mới "Video mô phỏng quy trình" (Phát triển năng lực): khung 12 tập từ khởi tạo dự án tới vận hành thương mại; mỗi tập có lớp quy trình quản trị đầu tư PVEP và lớp phân cảnh mô phỏng 3D, cổng quyết định, văn bản, biểu mẫu, bài học liên quan; hướng dẫn xây dựng bộ video. Excel thêm sheet Video_QuyTrinh để cập nhật trạng thái và đường dẫn video.
+- Công cụ cập nhật: mật khẩu tối thiểu 8 ký tự, có chữ hoa, chữ thường, chữ số (khuyến nghị từ 12 ký tự).
+
+## Phiên bản 3.4 – 23/10/2026
+- Dữ liệu mã hóa nhúng trực tiếp trong tệp index.html (khối `du-lieu-ma-hoa`); không còn tệp data/du-lieu.enc.js. Dashboard là một tệp HTML duy nhất, mở được cả khi tải về máy.
+- Trang Cập nhật dữ liệu: nút "Tải tệp index.html mới" tự ghép dữ liệu mới vào giao diện hiện hành; khi mở Dashboard từ tệp trên máy, trang yêu cầu chọn tệp index.html đang dùng làm khuôn.
+- Công cụ cong-cu/cap-nhat-du-lieu.html: tab 1 nhận tệp Excel và tệp index.html làm khuôn, xuất index.html; tab 2 đổi tài khoản trực tiếp trên index.html (vẫn nhận tệp du-lieu.enc.js của phiên bản cũ).
+- Cập nhật hướng dẫn trong Excel (sheet 0_HuongDan), README và thư mục docs.
+
 ## Phiên bản 3.3 – 21/10/2026
 - Khóa học điện gió, Bài 10 "Kinh tế dự án": ví dụ tính LCOE từng bước cho trang trại 495 MW (CAPEX theo IRENA 2025, phân bổ theo cơ cấu điển hình, CRF, LCOE ở P50 và P90); bảng độ nhạy và ba biến số quyết định tính khả thi; hợp đồng bán điện và phân bổ rủi ro giá; DSCR, LLCR và cách ngân hàng thẩm định; khung giá điện gió năm 2025 (QĐ 1508/QĐ-BCT, QĐ 1824/QĐ-BCT); mục "Bài này chưa đề cập".
 - Bài 6 "Thiết kế tuabin và nền móng": quy trình thiết kế tích hợp, vì sao ba cánh và đón gió phía trước, công suất riêng, IEC 61400-1:2019/AMD1:2025, IEC 61400-15-1:2025 và tình trạng dự thảo IEC 61400-15-2.

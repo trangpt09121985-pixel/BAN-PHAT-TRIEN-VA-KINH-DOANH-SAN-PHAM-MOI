@@ -17,8 +17,8 @@
 | 4 | Sheet `3_KeHoach`: cập nhật Đầu mối, Tiến độ (%), Đầu ra/mốc tiếp theo, Hạn, Ghi chú | Excel |
 | 5 | Sheet `4_BanTin`: dán bảng bản tin tuần vào các dòng trống, cột C–G (Nhóm tin, Nội dung, Ngày tin, Nguồn, Đường link). Cột Tuần, Kỳ để trống | Excel |
 | 6 | Lưu tệp (Ctrl + S) | Excel |
-| 7 | Đăng nhập Dashboard → menu **Cập nhật dữ liệu** → **Chọn tệp Excel** → xem bảng kiểm tra và các lưu ý → **Xem thử trên Dashboard** (nếu cần) → **Tải tệp du-lieu.enc.js** | Dashboard |
-| 8 | GitHub → thư mục `data` → **Add file** → **Upload files** → kéo tệp `du-lieu.enc.js` vào → **Commit changes** | GitHub |
+| 7 | Đăng nhập Dashboard → menu **Cập nhật dữ liệu** → **Chọn tệp Excel** → xem bảng kiểm tra và các lưu ý → **Xem thử trên Dashboard** (nếu cần) → **Tải tệp index.html mới** (trang tự ghép dữ liệu mã hóa vào giao diện hiện hành; nếu mở Dashboard từ tệp trên máy, chọn thêm tệp index.html đang dùng làm khuôn) | Dashboard |
+| 8 | GitHub → trang chính của kho → **Add file** → **Upload files** → kéo tệp `index.html` vừa tải vào (ghi đè tệp cũ; nếu tên có thêm số như "index (1).html" thì đổi lại thành `index.html`) → **Commit changes** | GitHub |
 | 9 | Sau 1–3 phút, mở lại trang, kiểm tra ngày cập nhật ở trang Tổng quan | Điện thoại |
 
 Tệp tải về ở bước 7 được mã hóa bằng chính tài khoản đang đăng nhập, nên tài khoản, mật khẩu của người dùng không thay đổi.

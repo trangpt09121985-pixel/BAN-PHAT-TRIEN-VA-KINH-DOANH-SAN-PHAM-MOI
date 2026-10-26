@@ -9,7 +9,7 @@
   Công cụ dành cho quản trị viên Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới – PVEP · v3.0
   Chạy hoàn toàn trên trình duyệt (Web Crypto + DecompressionStream), không gửi dữ liệu đi đâu, không dùng thư viện ngoài,
   không dùng localStorage/sessionStorage/cookie.
-  Chức năng: (1) mã hóa tệp Excel thành data/du-lieu.enc.js với tài khoản mới; (2) đổi tài khoản/mật khẩu của tệp du-lieu.enc.js hiện có.
+  Chức năng: (1) mã hóa tệp Excel và ghép vào index.html với tài khoản mới; (2) đổi tài khoản/mật khẩu của tệp index.html hiện có (dữ liệu mã hóa nằm ngay trong index.html).
 -->
 <style>
 :root{--navy:#005088;--navy-d:#003C66;--green:#2CB04A;--green-d:#0B7A3B;--ink:#14213D;--mute:#66758B;--line:#D8E0EA;--bg:#F2F5F9;--warn:#FFF6D6;--risk:#FBE9E7}
@@ -49,23 +49,25 @@ ol.g{padding-left:20px;margin:6px 0 0}
   <div class="tabs" role="group"><button data-t="a" aria-pressed="true">1. Mã hóa từ tệp Excel</button><button data-t="b" aria-pressed="false">2. Đổi tài khoản, mật khẩu</button></div>
 
   <section id="ta" class="card">
-    <h2>Mã hóa tệp Excel thành data/du-lieu.enc.js</h2>
+    <h2>Mã hóa tệp Excel và ghép vào index.html</h2>
     <label for="xf">Tệp Excel dữ liệu (.xlsx, tạo từ nút "Lưu Excel" của Dashboard)</label>
     <input type="file" id="xf" accept=".xlsx">
+    <label for="tf">Tệp index.html của Dashboard (bản đang dùng trên GitHub hoặc bản mới nhất được gửi) – dùng làm khuôn giao diện</label>
+    <input type="file" id="tf" accept=".html,text/html">
     <div class="row">
       <div><label for="au">Tên đăng nhập</label><input type="text" id="au" autocomplete="off" spellcheck="false"></div>
       <div></div>
-      <div><label for="ap">Mật khẩu (tối thiểu 10 ký tự, gồm chữ hoa, chữ thường, số)</label><input type="password" id="ap" autocomplete="new-password"></div>
+      <div><label for="ap">Mật khẩu (tối thiểu 8 ký tự, gồm chữ hoa, chữ thường, số; khuyến nghị từ 12 ký tự)</label><input type="password" id="ap" autocomplete="new-password"></div>
       <div><label for="ap2">Nhập lại mật khẩu</label><input type="password" id="ap2" autocomplete="new-password"></div>
     </div>
-    <button class="btn" id="ga">Kiểm tra và tạo du-lieu.enc.js</button>
+    <button class="btn" id="ga">Kiểm tra và tạo index.html</button>
     <div id="ma"></div>
   </section>
 
   <section id="tb" class="card" hidden>
-    <h2>Đổi tài khoản, mật khẩu của tệp du-lieu.enc.js hiện có</h2>
-    <label for="ef">Tệp data/du-lieu.enc.js đang dùng trên GitHub</label>
-    <input type="file" id="ef" accept=".js">
+    <h2>Đổi tài khoản, mật khẩu của tệp index.html hiện có</h2>
+    <label for="ef">Tệp index.html đang dùng trên GitHub (chấp nhận cả tệp du-lieu.enc.js của phiên bản cũ)</label>
+    <input type="file" id="ef" accept=".html,.js,text/html">
     <div class="row">
       <div><label for="ou">Tên đăng nhập hiện tại</label><input type="text" id="ou" autocomplete="off" spellcheck="false"></div>
       <div><label for="op">Mật khẩu hiện tại</label><input type="password" id="op" autocomplete="current-password"></div>
@@ -74,13 +76,13 @@ ol.g{padding-left:20px;margin:6px 0 0}
       <div><label for="np">Mật khẩu mới</label><input type="password" id="np" autocomplete="new-password"></div>
       <div><label for="np2">Nhập lại mật khẩu mới</label><input type="password" id="np2" autocomplete="new-password"></div>
     </div>
-    <button class="btn" id="gb">Đổi và tạo du-lieu.enc.js mới</button>
+    <button class="btn" id="gb">Đổi và tạo index.html mới</button>
     <div id="mb"></div>
   </section>
 
   <div class="card small">
-    <b>Sau khi tải tệp du-lieu.enc.js:</b>
-    <ol class="g"><li>Vào kho GitHub → thư mục <b>data</b> → <b>Add file</b> → <b>Upload files</b>.</li><li>Kéo tệp du-lieu.enc.js vào (ghi đè tệp cũ) → <b>Commit changes</b>.</li><li>Sau 1–3 phút, mở lại trang và đăng nhập bằng tài khoản mới. Thông báo tài khoản mới cho người dùng qua kênh nội bộ, không ghi vào GitHub.</li></ol>
+    <b>Sau khi tải tệp index.html:</b>
+    <ol class="g"><li>Nếu tên tệp trong thư mục Tải xuống có thêm số, ví dụ "index (1).html", đổi lại đúng thành <b>index.html</b>.</li><li>Vào kho GitHub → trang chính của kho → <b>Add file</b> → <b>Upload files</b> → kéo tệp index.html vào (ghi đè tệp cũ) → <b>Commit changes</b>.</li><li>Sau 1–3 phút, mở lại trang và đăng nhập bằng tài khoản mới. Thông báo tài khoản mới cho người dùng qua kênh nội bộ, không ghi vào GitHub.</li></ol>
   </div>
 </main>
 <script>
@@ -251,7 +253,7 @@ ol.g{padding-left:20px;margin:6px 0 0}
 
 </script>
 <script>
-/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.2
+/* Ánh xạ dữ liệu Dashboard <-> tệp Excel (dùng chung cho Dashboard và công cụ cập nhật) – v3.5
    Sheet có tab VÀNG: cập nhật hằng tuần; cột tô vàng là cột cần sửa. Sheet tab XÁM: dữ liệu tra cứu, chỉ sửa khi có văn bản/nội dung mới. */
 (function (G) {
   'use strict';
@@ -333,11 +335,16 @@ ol.g{padding-left:20px;margin:6px 0 0}
     { sheet: 'TuabinThamChieu', path: 'khoaHocDG.tuabin', cols: [
       ['ma', 'Mã', 't', 8], ['ten', 'Tên tuabin', 't', 34], ['p', 'Công suất (MW)', 'n', 10], ['d', 'Đường kính rôto (m)', 'n', 10], ['hub', 'Độ cao trục (m)', 'n', 10],
       ['vin', 'Cut-in (m/s)', 'n', 9], ['vr', 'Định mức (m/s)', 'n', 9], ['vout', 'Cut-out (m/s)', 'n', 9], ['rpm', 'Tốc độ quay tối đa (vòng/phút)', 'n', 10], ['cp', 'Cp thiết kế', 'n', 9], ['tsr', 'TSR tối ưu', 'n', 9], ['eta', 'Hiệu suất điện – cơ (0–1)', 'n', 9], ['nguon', 'Nguồn', 't', 8]] },
+    { sheet: 'Video_QuyTrinh', path: 'videoQT.tap', cols: [
+      ['ma', 'Mã tập (VD00…)', 't', 9], ['ten', 'Tên tập', 't', 40], ['gd', 'Giai đoạn (1–10)', 't', 9], ['thoiLuong', 'Thời lượng (phút)', 'n', 9],
+      ['trangThai', 'Trạng thái', 't', 12, ['Kịch bản', 'Phân cảnh', 'Đang dựng', 'Rà soát', 'Hoàn thành'], 1], ['lienKet', 'Đường dẫn video (SharePoint/Stream hoặc .mp4)', 't', 40, null, 1],
+      ['hinh', 'Hình minh họa (mã)', 't', 12], ['anh', 'Ảnh (mã)', 't', 14], ['bai', 'Bài khóa học liên quan', 't', 9], ['vanBan', 'Văn bản (mã, chấm phẩy)', 't', 24], ['bieuMau', 'Biểu mẫu (mã)', 't', 10],
+      ['cong', 'Cổng quyết định', 't', 44], ['quanTri', 'Lớp quản trị (mỗi dòng một đoạn)', 'p', 80], ['kyThuat', 'Lớp kỹ thuật 3D – phân cảnh (mỗi dòng một đoạn)', 'p', 80], ['ghiChu', 'Ghi chú', 't', 30]] },
   ];
   var CFG = ['phong', 'phuongThuc', 'chiTieu.quyHoachDGNK', 'quyTrinh.DGNK.ten', 'quyTrinh.DGNK.trangThai', 'quyTrinh.DGNK.nguon', 'quyTrinh.DGNK.gd1.ten',
     'quyTrinh.DGNK.gd1.trangThai', 'quyTrinh.DGNK.gd1.luuY', 'quyTrinh.DGNK.sangLoc', 'quyTrinh.SPM', 'banTinNhom', 'tuDienNhom',
     'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu',
-    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh'];
+    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh', 'videoQT.ten', 'videoQT.moTa', 'videoQT.doiTuong', 'videoQT.trangThaiQT', 'videoQT.huongDan'];
   var INFO = [['capNhat', 'Ngày cập nhật dữ liệu (mốc tính quá hạn) – SỬA MỖI TUẦN', 'd', 1], ['nguoiCapNhat', 'Người cập nhật', 't', 1], ['tanSuat', 'Tần suất cập nhật', 't'],
     ['nguongSapHan', 'Ngưỡng "sắp đến hạn" (ngày)', 'n'], ['phienBan', 'Phiên bản', 't'], ['tenBan', 'Tên Ban', 't'], ['tenTCT', 'Tên Tổng Công ty', 't'], ['slogan', 'Khẩu hiệu', 't'],
     ['laDuLieuMau', 'Là dữ liệu mẫu?', 'b'], ['ghiChu', 'Ghi chú chung (hiện ở trang Tổng quan)', 't', 1]];
@@ -379,8 +386,8 @@ ol.g{padding-left:20px;margin:6px 0 0}
       ['Bước 2. Sheet 2_NhiemVu: cập nhật Tiến độ (%), Hạn, Dự kiến, Đã hoàn thành?, Kết quả. Nhiệm vụ mới: ghi vào các dòng vàng trống phía dưới, mã tiếp theo (NV-03, NV-04...).'],
       ['Bước 3. Sheet 3_KeHoach: cập nhật Tiến độ (%), Đầu ra/mốc tiếp theo, Hạn, Ghi chú.'],
       ['Bước 4. Sheet 4_BanTin: dán bảng bản tin tuần (Nhóm tin | Nội dung | Ngày tin | Nguồn | Đường link) vào các dòng trống. Cột Tuần, Kỳ để trống – hệ thống tự điền theo ngày cập nhật.'],
-      ['Bước 5. Lưu tệp (Ctrl+S). Mở Dashboard → menu "Cập nhật dữ liệu" → chọn tệp Excel → Xem trước → bấm "Tải tệp du-lieu.enc.js".'],
-      ['Bước 6. Vào GitHub → thư mục data → Add file → Upload files → kéo tệp du-lieu.enc.js vào → Commit changes. Sau 1–3 phút trang web hiển thị số liệu mới.'],
+      ['Bước 5. Lưu tệp (Ctrl+S). Mở Dashboard → menu "Cập nhật dữ liệu" → chọn tệp Excel → Xem trước → bấm "Tải tệp index.html mới".'],
+      ['Bước 6. Vào GitHub → trang chính của kho → Add file → Upload files → kéo tệp index.html vừa tải vào (ghi đè tệp cũ) → Commit changes. Sau 1–3 phút trang web hiển thị số liệu mới.'],
       [''],
       ['Quy ước: ngày dd/mm/yyyy · tiến độ số 0–100 · thiếu thông tin ghi <CẦN_BỔ_SUNG> · mã Phòng: DGNK, SPM, BAN · không xóa/sửa dòng 1–2 (tên cột, mã trường) của mỗi sheet · không đổi tên sheet.'],
       ['Các sheet TAB XÁM (PhapLy, TrongTam, DieuKhoan, NguyenVan, TuDien, ...): dữ liệu tra cứu, chỉ sửa khi có văn bản hoặc nội dung mới.'],
@@ -455,7 +462,7 @@ ol.g{padding-left:20px;margin:6px 0 0}
   function b64(u) { u = new Uint8Array(u); var s = ''; for (var i = 0; i < u.length; i += 32768) s += String.fromCharCode.apply(null, u.subarray(i, i + 32768)); return btoa(s); }
   function u8(s) { var b = atob(s), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
   function msg(id, cls, html) { $(id).innerHTML = '<div class="msg ' + cls + '">' + html + '</div>'; }
-  function strong(p) { return p.length >= 10 && /[a-z]/.test(p) && /[A-Z]/.test(p) && /\d/.test(p); }
+  function strong(p) { return p.length >= 8 && /[a-z]/.test(p) && /[A-Z]/.test(p) && /\d/.test(p); }
   async function key(us, pw, salt, iter, use) {
     var base = await crypto.subtle.importKey('raw', te.encode(us.trim().toLowerCase() + '\n' + pw), 'PBKDF2', false, ['deriveKey']);
     return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, [use]);
@@ -464,55 +471,64 @@ ol.g{padding-left:20px;margin:6px 0 0}
     var salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
     var k = await key(us, pw, salt, ITER, 'encrypt');
     var ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, k, te.encode(JSON.stringify(data)));
-    var o = { v: 1, kdf: 'PBKDF2-SHA256', iter: ITER, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
-    return '/* Dữ liệu Dashboard Ban PT&KDSPM – đã mã hóa AES-256-GCM (PBKDF2-SHA256). Cập nhật ' + ((data.thongTin || {}).capNhat || '') + '. Không sửa tay tệp này. */\nwindow.DATA_MA_HOA = ' + JSON.stringify(o) + ';\n';
+    return { v: 1, kdf: 'PBKDF2-SHA256', iter: ITER, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
   }
-  function save(js) {
-    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([js], { type: 'text/javascript' })); a.download = 'du-lieu.enc.js';
+  var DM_A = '/*DU_LIEU_' + 'BAT_DAU*/', DM_B = '/*DU_LIEU_' + 'KET_THUC*/';
+  function hasBlock(t) { var a = t.indexOf(DM_A); return a >= 0 && t.indexOf(DM_B, a) > a; }
+  function ganDuLieu(html, o, ngay) {
+    var a = html.indexOf(DM_A), b = a < 0 ? -1 : html.indexOf(DM_B, a);
+    if (a < 0 || b < 0) throw new Error('Tệp HTML không có khối dữ liệu của Dashboard (cần index.html từ phiên bản 3.4 trở đi).');
+    return html.slice(0, a + DM_A.length) + '\n/* Dữ liệu Dashboard Ban PT&KDSPM – đã mã hóa AES-256-GCM (PBKDF2-SHA256). Cập nhật ' + (ngay || '') + '. Không sửa tay khối này. */\nwindow.DATA_MA_HOA = ' + JSON.stringify(o) + ';\n' + html.slice(b);
+  }
+  function save(text, name, type) {
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: type })); a.download = name;
     document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
   }
   function creds(u, p, p2) {
     if (!u.trim()) return 'Chưa nhập tên đăng nhập.';
     if (p !== p2) return 'Hai lần nhập mật khẩu không khớp.';
-    if (!strong(p)) return 'Mật khẩu cần tối thiểu 10 ký tự, có chữ hoa, chữ thường và chữ số.';
+    if (!strong(p)) return 'Mật khẩu cần tối thiểu 8 ký tự, có chữ hoa, chữ thường và chữ số (khuyến nghị từ 12 ký tự).';
     return '';
   }
   document.querySelectorAll('[data-t]').forEach(function (b) {
     b.onclick = function () { document.querySelectorAll('[data-t]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); }); $('#ta').hidden = b.dataset.t !== 'a'; $('#tb').hidden = b.dataset.t !== 'b'; };
   });
   $('#ga').onclick = async function () {
-    var f = $('#xf').files[0], e = creds($('#au').value, $('#ap').value, $('#ap2').value);
+    var f = $('#xf').files[0], tf = $('#tf').files[0], e = creds($('#au').value, $('#ap').value, $('#ap2').value);
     if (!f) return msg('#ma', 'err', 'Chưa chọn tệp Excel.');
+    if (!tf) return msg('#ma', 'err', 'Chưa chọn tệp index.html làm khuôn giao diện.');
     if (e) return msg('#ma', 'err', e);
     var btn = this; btn.disabled = true; btn.textContent = 'Đang xử lý…';
     try {
       var book = await XLSXMini.read(await f.arrayBuffer()), r = DashSchema.fromSheets(book), D = r.data;
       if (!(D.nhiemVu || []).length) r.warn.unshift('Tệp không có nhiệm vụ nào – kiểm tra sheet 2_NhiemVu.');
-      var js = await encrypt(D, $('#au').value, $('#ap').value); save(js);
-      msg('#ma', r.warn.length ? 'warn' : 'ok', '<b>Đã tạo du-lieu.enc.js</b> (dữ liệu đến ngày ' + esc(D.thongTin.capNhat) + ': ' + (D.nhiemVu || []).length + ' nhiệm vụ, ' + (D.keHoach || []).length + ' mục kế hoạch, ' + (D.phapLy || []).length + ' văn bản, ' + (D.banTin || []).length + ' tin, ' + (D.tuDien || []).length + ' thuật ngữ).' +
+      var tpl = await tf.text(); if (!hasBlock(tpl)) throw new Error('Tệp ' + tf.name + ' không phải index.html của Dashboard từ phiên bản 3.4 trở đi.');
+      var o = await encrypt(D, $('#au').value, $('#ap').value); save(ganDuLieu(tpl, o, D.thongTin.capNhat), 'index.html', 'text/html');
+      msg('#ma', r.warn.length ? 'warn' : 'ok', '<b>Đã tạo index.html</b> (dữ liệu đến ngày ' + esc(D.thongTin.capNhat) + ': ' + (D.nhiemVu || []).length + ' nhiệm vụ, ' + (D.keHoach || []).length + ' mục kế hoạch, ' + (D.phapLy || []).length + ' văn bản, ' + (D.banTin || []).length + ' tin, ' + (D.tuDien || []).length + ' thuật ngữ).' +
         (r.warn.length ? '<ul>' + r.warn.slice(0, 30).map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul>' : ''));
       $('#ap').value = $('#ap2').value = '';
     } catch (x) { msg('#ma', 'err', 'Không xử lý được tệp: ' + esc(x.message || x)); }
-    btn.disabled = false; btn.textContent = 'Kiểm tra và tạo du-lieu.enc.js';
+    btn.disabled = false; btn.textContent = 'Kiểm tra và tạo index.html';
   };
   $('#gb').onclick = async function () {
     var f = $('#ef').files[0], e = creds($('#nu').value, $('#np').value, $('#np2').value);
-    if (!f) return msg('#mb', 'err', 'Chưa chọn tệp du-lieu.enc.js.');
+    if (!f) return msg('#mb', 'err', 'Chưa chọn tệp index.html.');
     if (e) return msg('#mb', 'err', e);
     var btn = this; btn.disabled = true; btn.textContent = 'Đang xử lý…';
     try {
-      var txt = await f.text(), m = txt.match(/DATA_MA_HOA\s*=\s*(\{[\s\S]*?\})\s*;/);
-      if (!m) throw new Error('Tệp không đúng định dạng du-lieu.enc.js.');
+      var txt = await f.text(), isHtml = hasBlock(txt), src = isHtml ? txt.slice(txt.indexOf(DM_A), txt.indexOf(DM_B, txt.indexOf(DM_A))) : txt, m = src.match(/DATA_MA_HOA\s*=\s*(\{[\s\S]*?\})\s*;/);
+      if (!m) throw new Error('Tệp không có dữ liệu mã hóa của Dashboard (cần index.html từ phiên bản 3.4, hoặc du-lieu.enc.js của phiên bản cũ).');
       var E = JSON.parse(m[1]), data;
       try {
         var k = await key($('#ou').value, $('#op').value, u8(E.salt), E.iter, 'decrypt');
         data = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: u8(E.iv) }, k, u8(E.ct))));
       } catch (x) { throw new Error('Tên đăng nhập hoặc mật khẩu hiện tại không đúng.'); }
-      save(await encrypt(data, $('#nu').value, $('#np').value));
-      msg('#mb', 'ok', '<b>Đã tạo du-lieu.enc.js mới</b> với tài khoản mới. Tải tệp này lên thư mục data trên GitHub (ghi đè tệp cũ).');
+      var o2 = await encrypt(data, $('#nu').value, $('#np').value), ngay = (data.thongTin || {}).capNhat || '';
+      if (isHtml) { save(ganDuLieu(txt, o2, ngay), 'index.html', 'text/html'); msg('#mb', 'ok', '<b>Đã tạo index.html mới</b> với tài khoản mới. Tải tệp này lên trang chính của kho GitHub (ghi đè tệp cũ).'); }
+      else { save('/* Dữ liệu Dashboard Ban PT&KDSPM – đã mã hóa AES-256-GCM (PBKDF2-SHA256). Cập nhật ' + ngay + '. Không sửa tay tệp này. */\nwindow.DATA_MA_HOA = ' + JSON.stringify(o2) + ';\n', 'du-lieu.enc.js', 'text/javascript'); msg('#mb', 'ok', '<b>Đã tạo du-lieu.enc.js mới</b> (định dạng phiên bản cũ). Từ phiên bản 3.4 nên dùng index.html.'); }
       $('#op').value = $('#np').value = $('#np2').value = '';
     } catch (x) { msg('#mb', 'err', esc(x.message || x)); }
-    btn.disabled = false; btn.textContent = 'Đổi và tạo du-lieu.enc.js mới';
+    btn.disabled = false; btn.textContent = 'Đổi và tạo index.html mới';
   };
 })();
 </script>
