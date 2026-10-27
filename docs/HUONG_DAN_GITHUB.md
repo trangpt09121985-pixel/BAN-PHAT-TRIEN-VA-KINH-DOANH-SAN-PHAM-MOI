@@ -17,16 +17,17 @@ Toàn bộ thao tác làm trên trình duyệt (Chrome hoặc Edge), không cầ
 
 ## B. Trường hợp đã có kho, nhận phiên bản giao diện mới
 
-Tệp `index.html` trong gói mới chứa dữ liệu mẫu mã hóa bằng tài khoản thử nghiệm. Để giữ dữ liệu và tài khoản đang dùng:
+Tệp `index.html` trong gói mới đã mã hóa bằng tài khoản đang dùng (đã thông báo qua kênh nội bộ). Nếu chỉ cần cập nhật giao diện, tải thẳng tệp này lên. Khi muốn ghép dữ liệu Excel mới vào giao diện mới:
 
 1. Mở `cong-cu/cap-nhat-du-lieu.html` (trong gói mới) → tab **1. Mã hóa từ tệp Excel**.
 2. Chọn tệp Excel dữ liệu mới nhất của Ban, chọn tệp `index.html` của gói mới làm khuôn, nhập tài khoản và mật khẩu đang dùng → bấm **Kiểm tra và tạo index.html**.
 3. Mở kho → **Add file** → **Upload files** → kéo tệp `index.html` vừa tạo và các tệp, thư mục thay đổi khác (cong-cu, NHAT_KY_PHIEN_BAN.md…) vào → **Commit changes**.
+   - Phiên bản 3.6: tải thêm thư mục `tai-lieu/video` (các tệp `.mp4.enc.N`, mỗi tệp dưới 25 MB). Nếu vượt 100 tệp một lần, tải riêng thư mục này. Tệp Excel 3.6 chứa khóa giải mã video; luôn dùng Excel 3.6 trở lên khi ghép dữ liệu, nếu không video sẽ không phát được.
 4. Sau 1–3 phút, tải lại trang (trên máy tính: Ctrl + F5). Có thể xóa thư mục `data` cũ trên GitHub (không còn dùng).
 
 ## C. Đổi tài khoản và mật khẩu (bắt buộc trước khi gửi đường dẫn cho Lãnh đạo)
 
-Gói này dùng tài khoản thử nghiệm `ptkd.demo`. Thay bằng tài khoản chính thức:
+Khi cần đổi tài khoản hoặc mật khẩu đang dùng:
 
 1. Mở `https://<địa-chỉ-trang>/cong-cu/cap-nhat-du-lieu.html` → tab **2. Đổi tài khoản, mật khẩu**.
 2. Chọn tệp `index.html` đang dùng → nhập tài khoản hiện tại → nhập tài khoản và mật khẩu mới (tối thiểu 8 ký tự, có chữ hoa, chữ thường, số; khuyến nghị từ 12 ký tự) → bấm **Đổi và tạo index.html mới**.
@@ -36,6 +37,6 @@ Gói này dùng tài khoản thử nghiệm `ptkd.demo`. Thay bằng tài khoả
 ## Lưu ý
 
 - Giới hạn tải lên qua trình duyệt: mỗi tệp tối đa 25 MB, mỗi lần tối đa 100 tệp. Tệp lớn nhất của gói khoảng 7,7 MB; `index.html` khoảng 2,7 MB. Nếu trình duyệt báo quá 100 tệp, tải lần lượt từng thư mục con của `tai-lieu`.
-- Không tải lên GitHub: tệp Excel dữ liệu, văn bản nội bộ (QĐ 138/QĐ-BNNMT, báo cáo nội bộ, quyết định nội bộ).
+- Không tải lên GitHub: tệp Excel dữ liệu (chứa khóa giải mã video), video MP4 chưa mã hóa, văn bản nội bộ (QĐ 138/QĐ-BNNMT, báo cáo nội bộ, quyết định nội bộ).
 - Thư mục `tai-lieu` chỉ chứa văn bản quy phạm pháp luật công khai; bất kỳ ai có đường dẫn trực tiếp đến tệp PDF đều mở được.
 - Đề nghị Ban CNTT&CĐS thẩm định trước khi dùng chính thức; nếu Tổng Công ty có máy chủ nội bộ, có thể chép nguyên thư mục `github` lên máy chủ đó mà không cần sửa mã.

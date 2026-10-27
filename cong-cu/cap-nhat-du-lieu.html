@@ -336,15 +336,15 @@ ol.g{padding-left:20px;margin:6px 0 0}
       ['ma', 'Mã', 't', 8], ['ten', 'Tên tuabin', 't', 34], ['p', 'Công suất (MW)', 'n', 10], ['d', 'Đường kính rôto (m)', 'n', 10], ['hub', 'Độ cao trục (m)', 'n', 10],
       ['vin', 'Cut-in (m/s)', 'n', 9], ['vr', 'Định mức (m/s)', 'n', 9], ['vout', 'Cut-out (m/s)', 'n', 9], ['rpm', 'Tốc độ quay tối đa (vòng/phút)', 'n', 10], ['cp', 'Cp thiết kế', 'n', 9], ['tsr', 'TSR tối ưu', 'n', 9], ['eta', 'Hiệu suất điện – cơ (0–1)', 'n', 9], ['nguon', 'Nguồn', 't', 8]] },
     { sheet: 'Video_QuyTrinh', path: 'videoQT.tap', cols: [
-      ['ma', 'Mã tập (VD00…)', 't', 9], ['ten', 'Tên tập', 't', 40], ['gd', 'Giai đoạn (1–10)', 't', 9], ['thoiLuong', 'Thời lượng (phút)', 'n', 9],
-      ['trangThai', 'Trạng thái', 't', 12, ['Kịch bản', 'Phân cảnh', 'Đang dựng', 'Rà soát', 'Hoàn thành'], 1], ['lienKet', 'Đường dẫn video (SharePoint/Stream hoặc .mp4)', 't', 40, null, 1],
+      ['ma', 'Mã video (V01…)', 't', 9], ['ten', 'Tên video', 't', 40], ['moTa', 'Mô tả ngắn', 't', 40], ['gd', 'Giai đoạn (1–10)', 't', 9], ['thoiLuong', 'Thời lượng (phút)', 'n', 9],
+      ['trangThai', 'Trạng thái', 't', 12, ['Kịch bản', 'Phân cảnh', 'Đang dựng', 'Rà soát', 'Hoàn thành'], 1], ['lienKet', 'Đường dẫn video (SharePoint/Stream hoặc .mp4)', 't', 40, null, 1], ['tepVideo', 'Tệp video mã hóa trên web (chấm phẩy)', 't', 36], ['dungLuong', 'Dung lượng bản web (MB)', 'n', 9],
       ['hinh', 'Hình minh họa (mã)', 't', 12], ['anh', 'Ảnh (mã)', 't', 14], ['bai', 'Bài khóa học liên quan', 't', 9], ['vanBan', 'Văn bản (mã, chấm phẩy)', 't', 24], ['bieuMau', 'Biểu mẫu (mã)', 't', 10],
-      ['cong', 'Cổng quyết định', 't', 44], ['quanTri', 'Lớp quản trị (mỗi dòng một đoạn)', 'p', 80], ['kyThuat', 'Lớp kỹ thuật 3D – phân cảnh (mỗi dòng một đoạn)', 'p', 80], ['ghiChu', 'Ghi chú', 't', 30]] },
+      ['cong', 'Cổng quyết định', 't', 44], ['quanTri', 'Lớp quản trị (mỗi dòng một đoạn)', 'p', 80], ['kyThuat', 'Lớp kỹ thuật – cảnh và lời thuyết minh (mỗi dòng một đoạn)', 'p', 80], ['canh', 'Mốc cảnh (giây|tên cảnh, mỗi dòng một cảnh)', 'p', 40], ['phuDe', 'Phụ đề (giây bắt đầu|giây kết thúc|lời, mỗi dòng một câu)', 'p', 60], ['ghiChu', 'Ghi chú', 't', 30]] },
   ];
   var CFG = ['phong', 'phuongThuc', 'chiTieu.quyHoachDGNK', 'quyTrinh.DGNK.ten', 'quyTrinh.DGNK.trangThai', 'quyTrinh.DGNK.nguon', 'quyTrinh.DGNK.gd1.ten',
     'quyTrinh.DGNK.gd1.trangThai', 'quyTrinh.DGNK.gd1.luuY', 'quyTrinh.DGNK.sangLoc', 'quyTrinh.SPM', 'banTinNhom', 'tuDienNhom',
     'quyHoachDGNK.nguon', 'quyHoachDGNK.vb', 'quyHoachDGNK.tong', 'quyHoachDGNK.ghiChu',
-    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh', 'videoQT.ten', 'videoQT.moTa', 'videoQT.doiTuong', 'videoQT.trangThaiQT', 'videoQT.huongDan'];
+    'khoaHocDG.ten', 'khoaHocDG.moTa', 'khoaHocDG.doiTuong', 'khoaHocDG.macDinh', 'videoQT.ten', 'videoQT.moTa', 'videoQT.doiTuong', 'videoQT.trangThaiQT', 'videoQT.huongDan', 'videoQT.khoaVideo'];
   var INFO = [['capNhat', 'Ngày cập nhật dữ liệu (mốc tính quá hạn) – SỬA MỖI TUẦN', 'd', 1], ['nguoiCapNhat', 'Người cập nhật', 't', 1], ['tanSuat', 'Tần suất cập nhật', 't'],
     ['nguongSapHan', 'Ngưỡng "sắp đến hạn" (ngày)', 'n'], ['phienBan', 'Phiên bản', 't'], ['tenBan', 'Tên Ban', 't'], ['tenTCT', 'Tên Tổng Công ty', 't'], ['slogan', 'Khẩu hiệu', 't'],
     ['laDuLieuMau', 'Là dữ liệu mẫu?', 'b'], ['ghiChu', 'Ghi chú chung (hiện ở trang Tổng quan)', 't', 1]];

@@ -1,5 +1,10 @@
 # Nhật ký phiên bản – Dashboard Ban Phát triển và Kinh doanh Sản phẩm mới
 
+## Phiên bản 3.6 – 26/10/2026
+- Khóa học điện gió: Bài 4 bổ sung khí động học cánh (lực nâng, lực cản, góc tấn và thất tốc, xoắn cánh, đường Cp–λ, điều khiển MPPT, mật độ không khí theo nhiệt độ và độ cao, hệ thống pitch); Bài 7 bổ sung bảng lựa chọn móng theo độ sâu nước, móng trên bờ và vùng bãi triều gần bờ; Bài 8 bổ sung trình tự lắp đặt, kiểm soát chất lượng và chứng nhận loại, đo đường cong công suất theo IEC 61400-12-1:2022, chạy thử và nghiệm thu, an toàn (GWO), số hóa. Khóa học có 13 bài, 40 câu hỏi; 9 hình minh họa mới.
+- Video mô phỏng quy trình: thay khung 12 tập bằng 6 video 3D đã dựng (V01 Tổng quan vòng đời; V02 Khảo sát gió và điều kiện tự nhiên; V03 Thi công và lắp đặt; V04 Báo cáo tiền khả thi, khả thi và mô hình kinh tế; V05 Pháp lý, phê duyệt và quyết định đầu tư; V06 Vận hành, bảo dưỡng và quản lý tài sản), tổng khoảng 17 phút, thuyết minh giọng nữ, phụ đề tiếng Việt. V04–V06 được xây dựng từ đề cương của kịch bản. Trang video có trình phát, danh sách cảnh để tua nhanh, lời thuyết minh đầy đủ và lớp quy trình quản trị lấy từ khung 12 tập trước.
+- Video trên web được mã hóa AES-256-GCM (thư mục tai-lieu/video, mỗi tệp dưới 25 MB); khóa giải mã nằm trong dữ liệu đã mã hóa của Dashboard. Excel: sheet Video_QuyTrinh thêm cột Mô tả ngắn, Tệp video mã hóa, Dung lượng, Mốc cảnh, Phụ đề; sheet cấu hình thêm khóa videoQT.khoaVideo.
+
 ## Phiên bản 3.5 – 26/10/2026
 - Đổi tài khoản đăng nhập của Dashboard (thông báo tài khoản qua kênh nội bộ, không ghi vào kho).
 - Khóa học điện gió: Bài 6 "Thiết kế tuabin gió" bổ sung tải cực hạn, tải mỏi và trường hợp tải thiết kế (quy tắc Miner); kết cấu cánh (spar cap, shear web, vỏ sandwich), moay-ơ, bedplate, tháp; hệ truyền động (mô-men định mức, bánh răng hành tinh, hộp số hay truyền động trực tiếp, độ tin cậy); điều khiển pitch độc lập; tối ưu đa mục tiêu; tiêu chuẩn và chứng nhận (IEC 61400-22 đã rút lại từ 31/8/2018); tuabin trục đứng.
